@@ -1,0 +1,42 @@
+@import "styles";
+
+.sidebar-button {
+    position: absolute;
+    right: 0;
+    top: 67px;
+    min-height: calc(100vh - 67px);
+    border-left: 3px solid $chili-red;
+    min-width: 100px;
+    max-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include below($desktop){
+        min-width: 67px;
+        max-width: 67px;
+        padding: 50px 0;
+    }
+
+    span {
+        display: block;
+        writing-mode: vertical-rl;
+        color: $chili-red;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        @include heading-h4;
+    }
+
+    &:hover {
+        background-color: $chili-red;
+        cursor: pointer;
+        
+        span {
+            color: $delft-blue;
+        }
+    }
+}
+
+// .form-slider {
+//     z-index: 10000;
+// }

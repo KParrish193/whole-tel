@@ -1,15 +1,148 @@
 @import "styles";
 
-
 .form-drawer-container {
-    border: solid 2px $chili-red;
-}
+    padding: 0 67px;
+    min-height: calc(100vh - 67px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-.contact-header {
-    color: $earth-yellow;
-    font-size: 3rem;
-}
+    @include below($desktop){
+        border: solid 1px yellow;
+        padding: 50px 20px;
+        align-items: flex-start;
+    }
 
-.contact-paragraph {
-    color: $floral-white;
+    .contact-header {
+        color: $chili-red;
+        font-size: 3rem;
+        margin: 0;
+        @include heading-h2;
+        text-transform: uppercase;
+
+        @include below($desktop){
+            margin-top: 40px;
+        }
+    }
+
+    .contact-paragraph {
+        color: $floral-white;
+        margin: 0 0 40px 0;
+        @include body;
+    }
+
+    form {
+        display: flex; 
+        justify-content: space-between;
+        margin-right: 67px;
+
+        @include below($desktop){
+            flex-direction: column;
+        }
+
+        .form-left,
+        .form-right {
+            width: 45%;
+
+            @include below($desktop){
+                width: 100%;
+            }
+        }
+
+        .form-left {
+            display: flex;
+            flex-direction: column;
+
+            .location-date-wrapper {
+                @include below($desktop){
+                    margin-bottom: 40px;
+                }
+
+                label {
+                    color: $chili-red;
+                    @include subheading;
+                    margin-right: 10px;
+                }
+
+                select {
+                    width: 100%;
+                    background:transparent;
+                    color: $floral-white;
+                    border: solid 1px $floral-white;
+                    padding: 1rem;
+                    margin: 10px 0;
+                    @include body;
+                    display: hidden;
+                }
+
+                .dates {
+                    display: flex;
+
+                    div {
+                        width: 50%;
+                        display: flex;
+                        justify-content: space-between;
+
+                        &:first-of-type {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .form-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 6px;
+
+            input:not([type=submit]),
+            select,
+            textarea {
+                width: 100%;
+                background:transparent;
+                color: $floral-white;
+                border: solid 1px $floral-white;
+                padding: 1rem;
+                margin-bottom: 8px;
+                @include body;
+
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: $floral-white;
+                    opacity: 1; /* Firefox */
+                }
+
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: $floral-white;
+                }
+
+                &::-ms-input-placeholder { /* Microsoft Edge */
+                    color: $floral-white;
+                }
+            }
+
+            textarea {
+                min-height: 250px;
+            }
+
+            input[type=submit] {
+                width: fit-content;
+                background-color: $chili-red;
+                color: $delft-blue;
+                border-radius: 4px;
+                padding: 0.8rem 2rem; 
+                border: none;
+                text-transform: uppercase;
+                @include subheading;
+
+                &:hover {
+                    color: $delft-blue;
+                    background-color: $floral-white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
