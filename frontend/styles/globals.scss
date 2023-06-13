@@ -1,0 +1,30 @@
+@import "styles";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $delft-blue;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* base body styles */
+.container {
+    max-width: 1650px;
+    margin: 0 auto;
+    border: solid 1px purple;
+}
+
+.body-wrapper {
+  min-height: 100vh;
+  margin-top: 67px;
+}

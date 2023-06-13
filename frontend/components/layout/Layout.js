@@ -5,16 +5,18 @@ import Head from "next/head";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Whole-tel</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <ContactSidebar />
-      <main>{children}</main>
-      <Footer />
-    </div>
+      <div className="body-wrapper">
+        <Navbar />
+        <ContactSidebar />
+        <main className="container">{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
