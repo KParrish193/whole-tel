@@ -29,24 +29,46 @@ const navlinks = [
 
 const Navbar = () => {
     return (
-        <nav className={styles['navigation']}>
-            <div>
-                {/* TODO: Add logo */}
-            </div>
-            <ul className={styles['nav-list-wrapper']}>
-                {navlinks.map((link, index )=> {
-                    return (
-                      <li key={index} className={styles['nav-link-wrapper']}>
-                        <Link href={link.href} style={oreloMedium.style} className={styles['nav-link']}>
-                          {link.text}
-                        </Link>
-                      </li>
-                    );
-                }
-                )}
-            </ul>
+      <>
+        <nav className={styles["navigation-desktop"]}>
+          <div>{/* TODO: Add logo */}</div>
+          <ul className={styles["nav-list-wrapper"]}>
+            {navlinks.map((link, index) => {
+              return (
+                <li key={index} className={styles["nav-link-wrapper"]}>
+                  <Link
+                    href={link.href}
+                    style={oreloMedium.style}
+                    className={styles["nav-link"]}
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
-    )
+
+        <nav className={styles["navigation-mobile"]}>
+          <div>{/* TODO: Add logo */}</div>
+          <ul className={styles["nav-list-wrapper"]}>
+            {navlinks.map((link, index) => {
+              return (
+                <li key={index} className={styles["nav-link-wrapper"]}>
+                  <Link
+                    href={link.href}
+                    style={oreloMedium.style}
+                    className={styles["nav-link"]}
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </>
+    );
 };
 
 export default Navbar;

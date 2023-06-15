@@ -1,6 +1,6 @@
 @import 'styles';
 
-.navigation {
+.navigation-desktop {
     border-bottom: 2px solid $chili-red;
     position: absolute;
     top: 0;
@@ -22,7 +22,6 @@
 }
 
 .nav-link-wrapper {
-    border: solid 1px yellow;
     width: fit-content;
     margin-right: 0.4rem;
 }
