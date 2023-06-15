@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@datepicker-react/hooks": "^2.8.4",
     "dayjs": "^1.11.8",
     "next": "13.4.4",
     "nodemailer": "^6.9.3",

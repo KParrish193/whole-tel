@@ -6,6 +6,10 @@
     top: 0;
     left: 0;
     width: 100%;
+
+    @include below($desktop){
+        display: none;
+    }
 }
 
 .nav-list-wrapper {

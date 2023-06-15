@@ -12,10 +12,8 @@
     align-items: center;
     justify-content: center;
 
-    @include below($desktop){
-        min-width: 67px;
-        max-width: 67px;
-        padding: 50px 0;
+    @include below($widescreen){
+        display: none;
     }
 
     span {
