@@ -29,10 +29,10 @@ const Form = () => {
                 {/* <option value="2"></option> */}
               </select>
             </div>
-            <div className={styles["date-wrapper"]}>
+            {/* <div className={styles["date-wrapper"]}>
               <label style={figtree.style}>Dates</label>
               <Datepicker />
-            </div>
+            </div> */}
           </div>
           <div className={styles["form-right"]}>
             <label style={figtree.style}>Contact Info</label>
@@ -50,14 +50,21 @@ const Form = () => {
             </div>
             <input type="email" placeholder="E-mail" style={figtree.style} />
             <input type="tel" placeholder="Phone" style={figtree.style} />
-            <select>
-              <option>Number of Guests</option>
-            </select>
-            <textarea
-              placeholder="Tell us about your event"
-              style={figtree.style}
-            />
-            <div className={styles['submit-wrapper']}>
+
+            <div>
+              <label style={figtree.style}>Event Info</label>
+              <select>
+                <option>Event Date(s)</option>
+              </select>
+              <select>
+                <option>Number of Guests</option>
+              </select>
+              <textarea
+                placeholder="Tell us about your event"
+                style={figtree.style}
+              />
+            </div>
+            <div className={styles["submit-wrapper"]}>
               <input type="submit" value="Send it" style={figtree.style} />
             </div>
           </div>

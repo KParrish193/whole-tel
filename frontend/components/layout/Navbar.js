@@ -28,28 +28,46 @@ const navlinks = [
 ];
 
 const Navbar = () => {
-    return (
-      <>
-        <nav className={styles["navigation-desktop"]}>
-          <div>{/* TODO: Add logo */}</div>
-          <ul className={styles["nav-list-wrapper"]}>
-            {navlinks.map((link, index) => {
-              return (
-                <li key={index} className={styles["nav-link-wrapper"]}>
-                  <Link
-                    href={link.href}
-                    style={oreloMedium.style}
-                    className={styles["nav-link"]}
-                  >
-                    {link.text}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
 
-        <nav className={styles["navigation-mobile"]}>
+  if (typeof window !== "undefined") {
+
+    // JS for Navbar hide/show on scroll
+    var prevScrollPos = window.scrollY;
+    window.onscroll = function () {
+      var currentScrollPos = Math.max(window.scrollY, 0);
+      if (currentScrollPos - prevScrollPos <= 0) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-67px";
+      }
+      prevScrollPos = currentScrollPos;
+    };
+  }
+
+  return (
+    <div className={styles["navbar"]} id="navbar">
+      <nav className={styles["navigation-desktop"]}>
+        <div>{/* TODO: Add logo */}</div>
+        <ul className={styles["nav-list-wrapper"]}>
+          {navlinks.map((link, index) => {
+            return (
+              <li key={index} className={styles["nav-link-wrapper"]}>
+                <Link
+                  href={link.href}
+                  style={oreloMedium.style}
+                  className={styles["nav-link"]}
+                >
+                  {link.text}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+        <div className={styles['right-placeholder']}> </div>
+      </nav>
+
+      <div className={styles["navigation-mobile"]}>
+        <nav>
           <div>{/* TODO: Add logo */}</div>
           <ul className={styles["nav-list-wrapper"]}>
             {navlinks.map((link, index) => {
@@ -67,8 +85,23 @@ const Navbar = () => {
             })}
           </ul>
         </nav>
-      </>
-    );
+        <div
+          className={`${styles["mobile"]} ${styles["navbar-right-wrapper"]}`}
+        >
+          <button
+            role="button"
+            className={styles["navbar-btn"]}
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="site-navigation"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;

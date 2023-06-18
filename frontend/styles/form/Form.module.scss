@@ -31,7 +31,7 @@
     }
 
     .contact-header {
-        color: $chili-red;
+        color: $robin-egg;
         font-size: 3rem;
         margin: 0 0 10px 0;
         @include heading-h2;
@@ -43,7 +43,7 @@
     }
 
     .contact-paragraph {
-        color: $floral-white;
+        color: $delft-blue;
         margin: 0 0 30px 0;
         @include body;
 
@@ -66,7 +66,7 @@
         }
 
         label {
-            color: $chili-red;
+            color: $robin-egg;
             @include subheading;
         }
 
@@ -108,8 +108,8 @@
                 select {
                     width: 100%;
                     background:transparent;
-                    color: $floral-white;
-                    border: solid 1px $floral-white;
+                    color: $delft-blue;
+                    border: solid 1px $delft-blue;
                     padding: 1rem;
                     margin: 10px 0 0 0;
                     @include body;
@@ -117,8 +117,8 @@
 
                 &:focus {
                     outline: none !important;
-                    border-color: $chili-red;
-                    box-shadow: 0 0 2px $chili-red;
+                    border-color: $robin-egg;
+                    box-shadow: 0 0 2px $robin-egg;
                     border-radius: 3px;
                 }
             }
@@ -158,30 +158,30 @@
             textarea {
                 width: 100%;
                 background:transparent;
-                color: $floral-white;
-                border: solid 1px $floral-white;
+                color: $delft-blue;
+                border: solid 1px $delft-blue;
                 padding: 1rem;
                 margin-bottom: 10px;
                 @include body;
 
                 &:focus {
                     outline: none !important;
-                    border-color: $chili-red;
-                    box-shadow: 0 0 2px $chili-red;
+                    border-color: $robin-egg;
+                    box-shadow: 0 0 2px $robin-egg;
                     border-radius: 3px;
                 }
                 
                 &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-                    color: $floral-white;
+                    color: $delft-blue;
                     opacity: 1; /* Firefox */
                 }
 
                 &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-                    color: $floral-white;
+                    color: $delft-blue;
                 }
 
                 &::-ms-input-placeholder { /* Microsoft Edge */
-                    color: $floral-white;
+                    color: $delft-blue;
                 }
             }
 
@@ -195,13 +195,15 @@
                 justify-content: flex-end;
                 input[type=submit] {
                     width: fit-content;
-                    background-color: $chili-red;
+                    background-color: $robin-egg;
                     color: $delft-blue;
                     border-radius: 4px;
                     padding: 0.8rem 2rem; 
                     border: none;
                     text-transform: uppercase;
                     @include subheading;
+                    border-right: solid 1px $delft-blue;
+                    border-bottom: solid 1px $delft-blue;
 
                     &:hover {
                         color: $delft-blue;
