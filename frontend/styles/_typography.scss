@@ -10,9 +10,8 @@
 }
 
 @mixin heading-h2 { 
-    font-size: 5rem;
+    font-size: 5.5rem;
     letter-spacing: 0.02em;
-    font-weight: 700;
 
     @include below($desktop){
         font-size: 3.5rem;
@@ -38,11 +37,18 @@
     }
 }
 
+@mixin subheading-metal {
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+
+    @include below($desktop){
+        font-size: 1.2rem;
+    }
+}
 @mixin subheading { 
     font-size: 1.4rem;
     text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
 
     @include below($desktop){
         font-size: 1.2rem;
@@ -62,7 +68,7 @@
 
 @mixin body {
     font-size: 1.2rem;
-    line-height: 1.25rem;
+    line-height: 1.4rem;
     letter-spacing: 0.03rem;
     font-weight: 500;
 

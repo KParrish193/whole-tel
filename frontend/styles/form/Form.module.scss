@@ -32,27 +32,12 @@
 
     .contact-header {
         color: $robin-egg;
-        font-size: 3rem;
+        font-size: 3.6rem;
         margin: 0 0 10px 0;
         @include heading-h2;
-        text-transform: uppercase;
-
-        // @include below($desktop){
-        //     margin-top: 40px;
-        // }
-    }
-
-    .contact-paragraph {
-        color: $delft-blue;
-        margin: 0 0 30px 0;
-        @include body;
-
-        @include between($desktop, $widescreen){
-            padding-right: 20px;
-        }
 
         @include below($desktop){
-            margin: 0 0 40px 0;
+            margin-top: 40px;
         }
     }
 
@@ -65,11 +50,6 @@
             margin: 0;
         }
 
-        label {
-            color: $robin-egg;
-            @include subheading;
-        }
-
         @include below($desktop){
             flex-direction: column;
             margin-right: 0;
@@ -77,8 +57,11 @@
 
         .form-left,
         .form-right {
+            display: flex;
+            flex-direction: column;
+
             @include above($fullhd){
-                width: 45%;
+                width: 48%;
             }
 
             @include between($widescreen, $fullhd){            
@@ -92,11 +75,82 @@
             @include below($desktop){
                 width: 100%;
             }
+
+            .contact-info,
+            .event-info, 
+            .location-wrapper {
+                label {
+                    color: $robin-egg;
+                    @include subheading-metal;
+                }
+
+                .name-inputs {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    input {
+                        width: 49%;
+
+                        &:first-of-type {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                input:not([type=submit]),
+                select,
+                textarea {
+                    width: 100%;
+                    background:transparent;
+                    color: $delft-blue;
+                    border: solid 1px $delft-blue;
+                    padding: 1rem;
+                    margin-top: 10px;
+                    @include body;
+                    border-radius: 4px;
+
+                    &:focus {
+                        outline: none !important;
+                        border-color: $giant-orange;
+                        box-shadow: 0 0 2px $giant-orange;
+                        border-radius: 3px;
+                    }
+                    
+                    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: $delft-blue;
+                        opacity: 1; /* Firefox */
+                    }
+
+                    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                        color: $delft-blue;
+                    }
+
+                    &::-ms-input-placeholder { /* Microsoft Edge */
+                        color: $delft-blue;
+                    }
+                }
+
+                textarea {
+                    min-height: 250px;
+                }
+            }
         }
 
         .form-left {
-            display: flex;
-            flex-direction: column;
+            .contact-paragraph {
+                color: $delft-blue;
+                margin: 0 0 30px 0;
+                @include body;
+
+                @include between($desktop, $widescreen){
+                    padding-right: 20px;
+                }
+
+                @include below($desktop){
+                    margin: 0 0 40px 0;
+                }
+            }
 
             .location-wrapper {
                 margin: 0 0 30px 0;
@@ -105,109 +159,39 @@
                     margin: 0 0 40px 0;
                 }
 
-                select {
-                    width: 100%;
-                    background:transparent;
-                    color: $delft-blue;
-                    border: solid 1px $delft-blue;
-                    padding: 1rem;
-                    margin: 10px 0 0 0;
-                    @include body;
-                }
+                .date-wrapper {
+                    @include between($tablet, $desktop){
+                        margin-bottom: 40px;
+                    }
 
-                &:focus {
-                    outline: none !important;
-                    border-color: $robin-egg;
-                    box-shadow: 0 0 2px $robin-egg;
-                    border-radius: 3px;
-                }
-            }
-
-            .date-wrapper {
-                @include between($tablet, $desktop){
-                    margin-bottom: 40px;
-                }
-
-                @include below($tablet){
-                    margin-bottom: 20px;
+                    @include below($tablet){
+                        margin-bottom: 20px;
+                    }
                 }
             }
         }
 
         .form-right {
-            display: flex;
-            flex-direction: column;
-
-            .name-inputs {
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-                margin-top: 10px;
-
-                input {
-                    width: 49%;
-
-                    &:first-of-type {
-                        margin-right: 10px;
-                    }
-                }
-            }
-
-            input:not([type=submit]),
-            select,
-            textarea {
-                width: 100%;
-                background:transparent;
-                color: $delft-blue;
-                border: solid 1px $delft-blue;
-                padding: 1rem;
-                margin-bottom: 10px;
-                @include body;
-
-                &:focus {
-                    outline: none !important;
-                    border-color: $robin-egg;
-                    box-shadow: 0 0 2px $robin-egg;
-                    border-radius: 3px;
-                }
-                
-                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-                    color: $delft-blue;
-                    opacity: 1; /* Firefox */
-                }
-
-                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-                    color: $delft-blue;
-                }
-
-                &::-ms-input-placeholder { /* Microsoft Edge */
-                    color: $delft-blue;
-                }
-            }
-
-            textarea {
-                min-height: 250px;
-            }
-
             .submit-wrapper {
                 width: 100%;
                 display: flex;
                 justify-content: flex-end;
+                
                 input[type=submit] {
                     width: fit-content;
                     background-color: $robin-egg;
                     color: $delft-blue;
                     border-radius: 4px;
-                    padding: 0.8rem 2rem; 
+                    padding: 0.8rem 2.4rem; 
                     border: none;
-                    text-transform: uppercase;
-                    @include subheading;
+                    text-transform: capitalize;
+                    @include subheading-metal;
                     border-right: solid 1px $delft-blue;
                     border-bottom: solid 1px $delft-blue;
 
                     &:hover {
-                        color: $delft-blue;
-                        background-color: $earth-yellow;
+                        color: $floral-white;
+                        background-color: $giant-orange;
                         cursor: pointer;
                         // transform: scale(1.05);
                         transition: all 200ms cubic-bezier(0.880, 0.220, 0.200, 1.040);

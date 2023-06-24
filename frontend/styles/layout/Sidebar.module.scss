@@ -5,7 +5,7 @@
     right: 0;
     top: 90px;
     min-height: calc(100vh - 90px);
-    border-left: 3px solid $bright-red-orange;
+    border-left: 3px solid $giant-orange;
     min-width: 100px;
     max-width: 100px;
     display: flex;
@@ -19,14 +19,14 @@
     span {
         display: block;
         writing-mode: vertical-rl;
-        color: $bright-red-orange;
+        color: $giant-orange;
         font-size: 1.6rem;
         text-transform: uppercase;
         @include heading-h4;
     }
 
     &:hover {
-        background-color: $bright-red-orange;
+        background-color: $giant-orange;
         cursor: pointer;
         
         span {

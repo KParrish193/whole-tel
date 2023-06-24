@@ -11,5 +11,7 @@ const figtree = Figtree({ subsets: ["latin"] });
 const oreloLight = localFont({ src: "./fonts/OreloCondensedLight.woff2" });
 const oreloMedium = localFont({ src: "./fonts/OreloCondensedMedium.woff2" });
 const oreloRegular = localFont({ src: "./fonts/OreloCondensedRegular.woff2" });
+const metal = localFont({ src: "./fonts/Metal.woff" });
+const metal2 = localFont({ src: "./fonts/MetalReg-2.otf" });
 
-export { figtree, oreloLight, oreloMedium, oreloRegular };
+export { figtree, oreloLight, oreloMedium, oreloRegular, metal, metal2 };
