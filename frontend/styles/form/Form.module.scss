@@ -33,7 +33,7 @@
     .contact-header {
         color: $robin-egg;
         font-size: 3.6rem;
-        margin: 0 0 10px 0;
+        margin: 0 0 40px 0;
         @include heading-h2;
 
         @include below($desktop){
@@ -176,8 +176,9 @@
                 width: 100%;
                 display: flex;
                 justify-content: flex-end;
+                margin-top: 7px;
                 
-                input[type=submit] {
+                button[type=submit] {
                     width: fit-content;
                     background-color: $robin-egg;
                     color: $delft-blue;
