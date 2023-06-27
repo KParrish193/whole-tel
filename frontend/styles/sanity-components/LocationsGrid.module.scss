@@ -1,0 +1,15 @@
+@import "styles";
+
+.locations-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px purple;
+
+    .location-card-wrapper {
+        border: solid 1px orange;
+
+        .location-card-heading {
+            @include subheading-small;
+        }
+    }
+}
