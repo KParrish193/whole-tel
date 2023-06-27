@@ -7,9 +7,17 @@
 
     .location-card-wrapper {
         border: solid 1px orange;
+        padding: 20px;
 
         .location-card-heading {
             @include subheading-small;
+            font-size: 0.75rem;
+            border-bottom: solid 1px $delft-blue;
+        }
+
+        .location-card-content {
+            @include body;
+            font-size: 0.8rem;
         }
     }
 }
