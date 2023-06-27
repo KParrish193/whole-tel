@@ -1,4 +1,4 @@
-import styles from "../../styles/form/Form.module.scss";
+import styles from "../../styles/sanity-components/ReviewCarousel.module.scss";
 import { figtree, metal2 } from "../../styles/fonts";
 
 const ReviewCarousel = () => {

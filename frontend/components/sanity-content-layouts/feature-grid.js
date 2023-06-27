@@ -1,5 +1,5 @@
 // cards with icons and blurbs about available features
-import styles from "../../styles/form/Form.module.scss";
+import styles from "../../styles/sanity-components/FeatureGrid.module.scss";
 import { figtree, metal2 } from "../../styles/fonts";
 
 const FeatureGrid = () => {
