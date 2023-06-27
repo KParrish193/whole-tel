@@ -6,24 +6,32 @@ import { oreloLight, oreloMedium, oreloRegular } from "../../styles/fonts";
 // TODO: GROQ TO GET PAGES?
 const navlinks = [
   {
-    href: "",
+    href: "/about",
     text: "About",
   },
   {
-    href: "",
-    text: "Availability",
-  },
-  {
-    href: "",
+    href: "/locations",
     text: "Locations",
   },
   {
-    href: "",
-    text: "Past Events",
+    href: "/availability",
+    text: "Availability",
+  },
+  // {
+  //   href: "/events/upcoming-events",
+  //   text: "Upcoming Events",
+  // },
+  // {
+  //   href: "/events/past-events",
+  //   text: "Past Events",
+  // },
+  {
+    href: "/faq",
+    text: "FAQ",
   },
   {
-    href: "",
-    text: "FAQ",
+    href: "/reviews",
+    text: "Reviews",
   },
 ];
 
