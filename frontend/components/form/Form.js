@@ -48,7 +48,7 @@ const Form = () => {
             <input type="email" placeholder="E-mail" style={figtree.style} />
             <input type="tel" placeholder="Phone" style={figtree.style} />
             <select>
-              <option>Best time to reach you</option>
+              <option>Best time to be contacted</option>
             </select>
           </div>
         </div>
