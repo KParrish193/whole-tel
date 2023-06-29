@@ -21,10 +21,19 @@ a {
 .container {
     max-width: 1650px;
     margin: 0 auto;
-    border: solid 1px purple;
 }
 
 .body-wrapper {
-  min-height: calc(100vh - 67px);
-  margin-top: 67px;
+  // min-height: calc(100vh - $navheight);
+  // max-height: calc(100vh - $navheight);
+  // margin-top: $navheight;
+  max-height: 100vh;
+
+  border: solid 2px lime;
+  overflow: scroll;
+  width: calc(100vw - $sidebarwidth);
+}
+
+.scroll-content {
+  border: solid 1px fuchsia;
 }

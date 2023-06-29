@@ -11,13 +11,13 @@ body.is-clipped-overflow {
     // display: flex;
     // justify-content: space-between;
     // align-items: center;
-    background-color: $delft-blue;
+    background-color: transparent;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10000;
-    height: 90px;
+    height: $navheight;
     // scroll transition desktop devices
     transition: top 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
 
@@ -37,7 +37,7 @@ body.is-clipped-overflow {
     }
 
     .navigation-desktop {
-        border-bottom: 3px solid $chili-red;
+        border-bottom: 3px solid $delft-blue;
         position: absolute;
         top: 0;
         left: 0;
@@ -86,17 +86,12 @@ body.is-clipped-overflow {
                 margin-right: 0.4rem;
 
                 .nav-link {
-                    color: $chili-red;
+                    color: $giant-orange;
                     font-size: 1.2rem;
-                    letter-spacing: 0.05rem;
+                    letter-spacing: 0.07rem;
                     padding: 0.2rem;
                 }
             }
-        }
-
-        .right-placeholder {
-            min-width: 100px;
-            border-left: 3px solid $chili-red;
         }
     }
 
@@ -117,55 +112,13 @@ body.is-clipped-overflow {
         @include below($tablet){
             padding-left: 20px;
         }
-
-
     }
 
-    .navbar-right-wrapper {
+ 
+    }
+
+        .navbar-right-wrapper {
         display: flex;
         align-items: center;
         position: relative;
-
-        .navbar-btn {
-            z-index: 999;
-            display: block;
-            position: relative;
-            background-color: transparent;
-            border: none;
-            width: 34px;
-            height: 34px;
-            cursor: pointer;
-
-            span {
-                transition: all 0.2s ease;
-                position: absolute;
-                background-color: $chili-red;
-                height: 2px;
-                width: 34px;
-            }
-
-            span:nth-child(1) {
-                top: calc(50% - 4px);
-                left: 0;
-            }
-
-            span:nth-child(2) {
-                top: calc(50% + 4px);
-                left: 0;
-            }
-
-            .is-active span:nth-child(1) {
-                width: 30px;
-                transform: rotate(45deg);
-                background-color: $chili-red;
-                transform: translate(0, 5px) rotate(45deg);
-            }
-
-            .is-active span:nth-child(2) {
-                width: 30px;
-                transform: translate(0 -4.5px) rotate(-45deg);
-                background-color: $chili-red;
-            }
-        }
-    }
 }

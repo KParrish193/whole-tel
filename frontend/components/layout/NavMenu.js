@@ -1,12 +1,12 @@
 import styles from "../../styles/layout/Navbar.module.scss";
 
-import Link from 'next/link'
-import { oreloLight, oreloMedium, oreloRegular } from "../../styles/fonts";
+import Link from "next/link";
+import { metal2, figtree } from "../../styles/fonts";
 
 // TODO: GROQ TO GET PAGES?
 const navlinks = [
   {
-    href: "/about",
+    href: "/",
     text: "About",
   },
   {
@@ -35,8 +35,7 @@ const navlinks = [
   },
 ];
 
-const Navbar = () => {
-
+const NavMenu = () => {
   if (typeof window !== "undefined") {
     // JS for Navbar hide/show on scroll
     var prevScrollPos = window.scrollY;
@@ -45,7 +44,7 @@ const Navbar = () => {
       if (currentScrollPos - prevScrollPos <= 0) {
         document.getElementById("navbar").style.top = "0";
       } else {
-        document.getElementById("navbar").style.top = "-67px";
+        document.getElementById("navbar").style.top = "-90px";
       }
       prevScrollPos = currentScrollPos;
     };
@@ -54,14 +53,13 @@ const Navbar = () => {
   return (
     <div className={styles["navbar"]} id="navbar">
       <nav className={styles["navigation-desktop"]}>
-        <div>{/* TODO: Add logo */}</div>
         <ul className={styles["nav-list-wrapper"]}>
           {navlinks.map((link, index) => {
             return (
               <li key={index} className={styles["nav-link-wrapper"]}>
                 <Link
                   href={link.href}
-                  style={oreloMedium.style}
+                  style={metal2.style}
                   className={styles["nav-link"]}
                 >
                   {link.text}
@@ -70,45 +68,11 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <div className={styles['right-placeholder']}> </div>
-      </nav>
 
-      <div className={styles["navigation-mobile"]}>
-        <nav>
-          <div>{/* TODO: Add logo */}</div>
-          <ul className={styles["nav-list-wrapper"]}>
-            {navlinks.map((link, index) => {
-              return (
-                <li key={index} className={styles["nav-link-wrapper"]}>
-                  <Link
-                    href={link.href}
-                    style={oreloMedium.style}
-                    className={styles["nav-link"]}
-                  >
-                    {link.text}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-        <div
-          className={`${styles["mobile"]} ${styles["navbar-right-wrapper"]}`}
-        >
-          <button
-            role="button"
-            className={styles["navbar-btn"]}
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="site-navigation"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
+
+      </nav>
     </div>
   );
 };
 
-export default Navbar;
+export default NavMenu;
