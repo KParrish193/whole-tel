@@ -13,12 +13,7 @@ const Form = () => {
           <div className={styles["form-left"]}>
             {/* include to report the date of submission <input type="hidden" /> */}
             <p className={styles["contact-paragraph"]} style={figtree.style}>
-              If you have any questions or would like to inquire about booking
-              our properties, we're here to assist you. Simply fill out the
-              form, and our team will get back to you promptly. We strive to
-              make your booking experience seamless and look forward to helping
-              you find the perfect location for your event. Get in touch with us
-              today!
+              {"If you have any questions or would like to inquire about booking our properties, we're here to assist you. Simply fill out the form, and our team will get back to you promptly. We strive to make your booking experience seamless and look forward to helping you find the perfect location for your event. Get in touch with us today!"}
             </p>
             <div className={styles["location-wrapper"]}>
               <label style={metal2.style}>Location</label>
