@@ -38,7 +38,6 @@ const navlinks = [
 const Navbar = () => {
 
   if (typeof window !== "undefined") {
-
     // JS for Navbar hide/show on scroll
     var prevScrollPos = window.scrollY;
     window.onscroll = function () {
