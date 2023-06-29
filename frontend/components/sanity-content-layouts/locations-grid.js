@@ -4,9 +4,7 @@ import { figtree, metal2 } from "../../styles/fonts";
 const LocationsGrid = ({ locations }) => {
   return (
     <div className={styles["locations-grid-wrapper"]}>
-      {console.log(locations.length > 0)}
-      {
-        locations.length > 0
+      {locations.length > 0
           ? locations.map((location, index) => {
               return (
                 <div className={styles["location-card-wrapper"]} key={index}>

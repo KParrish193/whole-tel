@@ -130,18 +130,18 @@
             width: 34px;
         }
 
-        &.is-active {
+        &.button-is-active {
             span:nth-child(1) {
-                width: 30px;
+                width: 34px;
                 transform: rotate(45deg);
-                background-color: $delft-blue;
-                transform: translate(0, 5px) rotate(45deg);
+                transform: translate(0, 10px) rotate(45deg);
             }
 
             span:nth-child(2) {
-                width: 30px;
-                transform: translate(0 -4.5px) rotate(-45deg);
-                background-color: $delft-blue;
+                width: 34px;
+                transform: rotate(-45deg);
+                transform: translate(0, -10px) rotate(-45deg);
+                transform-origin: center;
             }
 
             span:nth-child(3) {
@@ -190,3 +190,22 @@
 
 // Form and Menu Sliding Animations
 // TODO: Add styles for sliding drawers over
+
+.form-slider {
+    border: solid 3px fuchsia;
+    // height: 100vh;
+    height: 50px;
+
+    &.is-active {
+        background-color: cyan;
+    }
+}
+
+.nav-slider {
+    border: solid 3px lime;
+    height: 50px;
+
+    &.is-active {
+        background-color: fuchsia;
+    }
+}

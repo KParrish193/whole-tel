@@ -11,11 +11,12 @@ import Facebook from "../../svgs/facebook.svg";
 
 const ControlBar = () => {
 
+  // load DOM elements first, then do stuff
   if (typeof window !== "undefined") {
-    // JS for Navbar hide/show on scroll
+    // JS for mobile control bar hide/show on scroll
     var prevScrollPos = window.scrollY;
     window.onscroll = function () {
-    var currentScrollPos = Math.max(window.scrollY, 0);
+      var currentScrollPos = Math.max(window.scrollY, 0);
       if (currentScrollPos - prevScrollPos <= 0) {
         document.getElementById("mobile-control-bar").style.top = "0";
       } else {
@@ -24,8 +25,28 @@ const ControlBar = () => {
       prevScrollPos = currentScrollPos;
     };
 
-      const slider = document.getElementById("form-slider");
-      console.log("slider", slider);
+    // query selectors for nav and form drawers
+    const formTrigger = document.getElementById("form-button");
+    const navTrigger = document.getElementById("nav-button");
+
+    // query selector to freeze content under drawers
+    var body = document.querySelector("body");
+
+    formTrigger.addEventListener("click", () => {
+      const formSlider = document.getElementById("form-slider");
+      // Toggle the "is-active" class on both the button and the drawer
+      formTrigger.classList.toggle(`${styles["button-is-active"]}`);
+      formSlider.classList.toggle(`${styles["is-active"]}`);
+      body.classList.toggle("is-clipped-overflow");
+    });
+
+    navTrigger.addEventListener("click", () => {
+      const navSlider = document.getElementById("nav-slider");
+      // Toggle the "is-active" class on both the button and the drawer
+      navTrigger.classList.toggle(`${styles["button-is-active"]}`);
+      navSlider.classList.toggle(`${styles['is-active']}`);
+      body.classList.toggle("is-clipped-overflow");
+    });
   }
 
   return (
@@ -46,7 +67,7 @@ const ControlBar = () => {
           </button>
         </div>
 
-        <div className={styles["contact-button"]}>
+        <div className={styles["contact-button"]} id="form-button">
           <span style={metal2.style}>Contact Us</span>
         </div>
 
