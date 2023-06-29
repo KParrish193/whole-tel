@@ -7,8 +7,6 @@ import Instagram from '../../svgs/instagram.svg';
 import Facebook from "../../svgs/facebook.svg";
 
 // Contains JS for Control Bar, Form Drawer and Menu Drawer
-
-
 const ControlBar = () => {
 
   // load DOM elements first, then do stuff
