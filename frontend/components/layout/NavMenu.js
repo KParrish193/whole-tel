@@ -1,4 +1,4 @@
-import styles from "../../styles/layout/Navbar.module.scss";
+import styles from "../../styles/layout/NavMenu.module.scss";
 
 import Link from "next/link";
 import { metal2, figtree } from "../../styles/fonts";
@@ -36,23 +36,8 @@ const navlinks = [
 ];
 
 const NavMenu = () => {
-  if (typeof window !== "undefined") {
-    // JS for Navbar hide/show on scroll
-    var prevScrollPos = window.scrollY;
-    window.onscroll = function () {
-      var currentScrollPos = Math.max(window.scrollY, 0);
-      if (currentScrollPos - prevScrollPos <= 0) {
-        document.getElementById("navbar").style.top = "0";
-      } else {
-        document.getElementById("navbar").style.top = "-90px";
-      }
-      prevScrollPos = currentScrollPos;
-    };
-  }
-
   return (
-    <div className={styles["navbar"]} id="navbar">
-      <nav className={styles["navigation-desktop"]}>
+      <nav className={styles["nav-menu"]}>
         <ul className={styles["nav-list-wrapper"]}>
           {navlinks.map((link, index) => {
             return (
@@ -68,10 +53,7 @@ const NavMenu = () => {
             );
           })}
         </ul>
-
-
       </nav>
-    </div>
   );
 };
 

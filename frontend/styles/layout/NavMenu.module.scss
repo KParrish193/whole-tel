@@ -7,17 +7,14 @@ body.is-clipped-overflow {
     position: fixed;
 }
 
-.navbar {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    background-color: transparent;
-    width: 100%;
+.nav-menu {
+    display: none;
+    background-color: $giant-orange;
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 10000;
-    height: $navheight;
+    right: 0;
+    padding-right: $sidebarwidth;
+    height: 100vh;
     // scroll transition desktop devices
     transition: top 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
 
@@ -113,12 +110,4 @@ body.is-clipped-overflow {
             padding-left: 20px;
         }
     }
-
- 
-    }
-
-        .navbar-right-wrapper {
-        display: flex;
-        align-items: center;
-        position: relative;
 }
