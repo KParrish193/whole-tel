@@ -1,0 +1,51 @@
+@import "styles";
+
+.socials {
+    &.nav-menu {
+        @include above($widescreen){
+            display: none;
+        }
+
+        @include below($widescreen){
+            display: none;
+        }
+    }
+
+    &.control-bar {
+        display: flex;
+        flex-direction: column;
+
+        @include below($widescreen){
+            display: none;
+        }
+
+        a {
+            background-color: $floral-white;
+            border-left: 3px solid $delft-blue;
+            border-top: 3px solid $delft-blue;
+            border-bottom: none;
+            border-right: none;
+            height: $sidebarwidth;
+            width: $sidebarwidth;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                fill: $giant-orange;
+                width: 55px;
+                height: 55px;
+            }
+
+            &:hover {
+                background-color: $giant-orange;
+                transition: all 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
+                cursor: pointer;
+                
+                svg {
+                    fill: $floral-white;
+                }
+            }
+        }
+    }
+}

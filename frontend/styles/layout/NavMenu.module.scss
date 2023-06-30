@@ -5,111 +5,34 @@ body.is-clipped-overflow {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-color: grey;
-    opacity: 0.2;
 }
 
 .nav-menu {
-    display: none;
-    background-color: $giant-orange;
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding-right: $sidebarwidth;
-    height: 100vh;
-    // scroll transition desktop devices
-    transition: top 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
+    padding: 0 40px;
+    width: 100%;
+    margin-top: -2.5rem;
 
-    @include below($tablet){
-        // scroll transition mobile devices
-        transition: top 0.5s cubic-bezier(0.82, 0.14, 0.23, 0.885);
-    }
-
-    .navigation-desktop,
-    .navigation-mobile {
-        width: 100%;
+    .nav-list-wrapper {
+        list-style: none;
         display: flex;
-        
-        .nav-list-wrapper {
-            list-style: none;
-        }
-    }
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        // width: 100%;
 
-    .navigation-desktop {
-        border-bottom: 3px solid $delft-blue;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 90px;
-
-        @include below($widescreen){
-            display: none;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-list-wrapper {
-            list-style: none;
-            padding: 0  0 0;
-            display: flex;
-            align-items: center;
-            border: solid 1px lime;
+        .nav-link-wrapper {
             width: 100%;
+            border-bottom: 1px $floral-white solid;
 
-            @include above($fullhd){
-                padding-left: 100px;
+            .nav-link {
+                color: $floral-white;
+                font-size: 2.4rem;
+                letter-spacing: 0.07rem;
+                padding: 1rem;
+                display: block;
             }
-
-            @include between($widescreen, $fullhd){
-                padding-left: 45px;
-            }
-
-            // @include between($desktop, $widescreen){
-            //     padding-left: 20px;
-            // }
-
-            // @include between($tablet, $desktop){
-            //     padding-left: 50px;
-            // }
-
-            // @include below($tablet){
-            //     padding-left: 20px;
-            // }
-
-            .nav-link-wrapper {
-                width: fit-content;
-                margin-right: 0.4rem;
-
-                .nav-link {
-                    color: $giant-orange;
-                    font-size: 1.2rem;
-                    letter-spacing: 0.07rem;
-                    padding: 0.2rem;
-                }
-            }
-        }
-    }
-
-    .navigation-mobile {
-        border: solid 1px fuchsia;
-        @include above($widescreen){
-            display: none;
-        }
-
-        @include between($desktop, $widescreen){
-                padding-left: 20px;
-            }
-
-        @include between($tablet, $desktop){
-            padding-left: 50px;
-        }
-
-        @include below($tablet){
-            padding-left: 20px;
         }
     }
 }

@@ -1,4 +1,5 @@
 import styles from "../../styles/layout/NavMenu.module.scss";
+import Socials from "./Socials";
 
 import Link from "next/link";
 import { metal2, figtree } from "../../styles/fonts";
@@ -37,23 +38,24 @@ const navlinks = [
 
 const NavMenu = () => {
   return (
-      <nav className={styles["nav-menu"]}>
-        <ul className={styles["nav-list-wrapper"]}>
-          {navlinks.map((link, index) => {
-            return (
-              <li key={index} className={styles["nav-link-wrapper"]}>
-                <Link
-                  href={link.href}
-                  style={metal2.style}
-                  className={styles["nav-link"]}
-                >
-                  {link.text}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+    <nav className={styles["nav-menu"]}>
+      <ul className={styles["nav-list-wrapper"]}>
+        {navlinks.map((link, index) => {
+          return (
+            <li key={index} className={styles["nav-link-wrapper"]}>
+              <Link
+                href={link.href}
+                style={metal2.style}
+                className={styles["nav-link"]}
+              >
+                {link.text}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <Socials directory={"nav-menu"} />
+    </nav>
   );
 };
 
