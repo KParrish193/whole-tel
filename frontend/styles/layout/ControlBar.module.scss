@@ -190,11 +190,16 @@
     background: $floral-white;
     transform: translateX(calc(100% + $sidebarwidth));
     transition: transform 0.6s cubic-bezier(0.820, 0.085, 0.395, 0.895);
-    border-bottom: 2px solid lime;
 
     @include below($widescreen){
         width: 100%;
         height: calc(100vh - $navheight);
+        transform: translateY(calc(-100% - $navheight));
+    }
+
+    @include below($desktop){
+        // margin-top: $navheight;
+        min-height: 100%;
         transform: translateY(calc(-100% - $navheight));
     }
 
@@ -254,18 +259,11 @@
 }
 
 .nav-slider {
-    width: calc(55% - $sidebarwidth);
-    min-height: 50vh;
     position: fixed;
-    right: $sidebarwidth;
     top: 0;
-    background: $giant-orange;
-    transform: translateX(250%);
+    background: $floral-white;
     transition: transform 0.6s cubic-bezier(0.820, 0.085, 0.395, 0.895);
-    // box-shadow: rgba(50, 50, 93, 0.25) 0px 11px 25px -5px, rgba(0, 0, 0, 0.3) 0px 6px 12px -8px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     display: flex;
-    align-items: center;
     z-index: 999;
     
     @include above($fullhd){
@@ -273,15 +271,24 @@
     }
 
     @include above($widescreen){
+        transform: translateX(250%);
         border-bottom-left-radius: 8px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        right: $sidebarwidth;
+        width: calc(55% - $sidebarwidth);
+        min-height: 50vh;
+        align-items: center;
     }
 
     @include below($widescreen){
-        border: solid 2px lime;
         width: 100%;
-        transform: translateY(calc(100% + $navheight));
+        transform: translateY(calc(-100% - $navheight));
         right: 0;
-        display: none;
+    }
+
+    @include below($desktop){
+        height: calc(100vh - $navheight);
+        margin-top: $navheight;
     }
 
     &.is-active {
@@ -289,7 +296,6 @@
 
         @include below($widescreen){
             transform: translateY(0);
-            border: solid 2px cyan;
         }
     }
 }

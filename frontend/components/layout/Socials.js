@@ -3,16 +3,20 @@ import Instagram from "../../svgs/instagram.svg";
 import Facebook from "../../svgs/facebook.svg";
 
 const Socials = ({ directory }) => {
-    return(
-        <div className={`${styles["socials"]} ${styles[`${directory}`]}`}>
-            <a>
-                <Instagram />
-            </a>
-            <a>
-                <Facebook />
-            </a>
-        </div>
-    )
+  // bring in hrefs from GROQ
+  const facebook = "https://www.facebook.com/Wholetel";
+  const insta = "https://www.instagram.com/wholetel/";
+
+  return (
+    <div className={`${styles["socials"]} ${styles[`${directory}`]}`}>
+      <a href={insta} target="_blank">
+        <Instagram />
+      </a>
+      <a href={facebook} target="_blank">
+        <Facebook />
+      </a>
+    </div>
+  );
 };
 
 export default Socials;

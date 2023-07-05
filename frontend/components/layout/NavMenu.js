@@ -54,7 +54,9 @@ const NavMenu = () => {
           );
         })}
       </ul>
-      <Socials directory={"nav-menu"} />
+      <div className={styles["socials-wrapper"]}>
+        <Socials directory={"nav-menu"} />
+      </div>
     </nav>
   );
 };
