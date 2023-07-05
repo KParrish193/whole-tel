@@ -22,15 +22,14 @@ const ControlBar = () => {
       prevScrollPos = currentScrollPos;
     };
 
-    // query selector to freeze content under drawers
-    var body = document.querySelector("body");
-
     // query selectors for nav and form drawers - Desktop
     const formTrigger = document.getElementById("form-button");
     const navTrigger = document.getElementById("nav-button");
+    const formCloseButton = document.getElementById("form-close-button");
 
     formTrigger.addEventListener("click", () => {
       const formSlider = document.getElementById("form-slider");
+      var body = document.querySelector("body");
       // Toggle the "is-active" class on both the button and the drawer
       formTrigger.classList.toggle(`${styles["button-is-active"]}`);
       formSlider.classList.toggle(`${styles["is-active"]}`);
@@ -39,11 +38,24 @@ const ControlBar = () => {
 
     navTrigger.addEventListener("click", () => {
       const navSlider = document.getElementById("nav-slider");
+      var body = document.querySelector("body");
       // Toggle the "is-active" class on both the button and the drawer
       navTrigger.classList.toggle(`${styles["button-is-active"]}`);
       navSlider.classList.toggle(`${styles["is-active"]}`);
       body.classList.toggle("is-clipped-overflow");
     });
+
+    formCloseButton.addEventListener("click", () => {
+      const formSlider = document.getElementById("form-slider");
+      var body = document.querySelector("body");
+
+      if(formSlider.classList.contains(`${styles['is-active']}`)){
+        formSlider.classList.remove(`${styles['is-active']}`)
+      }
+      if(body.classList.contains("is-clipped-overflow")){
+        body.classList.remove("is-clipped-overflow")
+      };
+    })
   }
 
   return (
@@ -69,11 +81,15 @@ const ControlBar = () => {
             <span style={metal2.style}>Contact Us</span>
           </div>
 
-          <Socials directory={'control-bar'}/>
+          <Socials directory={"control-bar"} />
         </div>
       </div>
 
       <div className={styles["form-slider"]} id="form-slider">
+        <button className={styles["form-close-button"]} id="form-close-button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
         <Form />
       </div>
 

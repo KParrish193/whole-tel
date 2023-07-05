@@ -19,11 +19,58 @@ const Locations = () => {
       blurb: "",
       icon: "",
     },
+    {
+      name: "Aspen, Colorado, United States",
+      blurb: "",
+      icon: "",
+    },
+    {
+      name: "Aspen, Colorado, United States",
+      blurb: "",
+      icon: "",
+    },
+    {
+      name: "Aspen, Colorado, United States",
+      blurb: "",
+      icon: "",
+    },
+    {
+      name: "Aspen, Colorado, United States",
+      blurb: "",
+      icon: "",
+    },
+    {
+      name: "Aspen, Colorado, United States",
+      blurb: "",
+      icon: "",
+    },
+    {
+      name: "Aspen, Colorado, United States",
+      blurb: "",
+      icon: "",
+    },
+    {
+      name: "Aspen, Colorado, United States",
+      blurb: "",
+      icon: "",
+    },
+    {
+      name: "Aspen, Colorado, United States",
+      blurb: "",
+      icon: "",
+    },
+    {
+      name: "Aspen, Colorado, United States",
+      smallBlurb: "LAST ONE",
+      icon: "",
+    },
   ];
 
   return (
     <section className={styles["locations-page-wrapper"]}>
-      <h1>Locations</h1>
+      <div className={styles["location"]}>
+        <h1>Locations</h1>
+      </div>
       <LocationsGrid locations={locationsList} />
     </section>
   );

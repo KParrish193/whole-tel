@@ -1,12 +1,5 @@
 @import 'styles';
 
-body.is-clipped-overflow {
-    overflow-y: hidden;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-}
-
 .nav-menu {
     padding: 0 40px;
     width: 100%;
