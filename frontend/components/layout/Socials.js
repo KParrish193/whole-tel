@@ -9,10 +9,10 @@ const Socials = ({ directory }) => {
 
   return (
     <div className={`${styles["socials"]} ${styles[`${directory}`]}`}>
-      <a href={insta} target="_blank">
+      <a href={insta} target="_blank" rel="noreferrer">
         <Instagram />
       </a>
-      <a href={facebook} target="_blank">
+      <a href={facebook} target="_blank" rel="noreferrer">
         <Facebook />
       </a>
     </div>
