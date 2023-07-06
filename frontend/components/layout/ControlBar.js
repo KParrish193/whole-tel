@@ -48,7 +48,7 @@ const ControlBar = () => {
     formCloseButton.addEventListener("click", () => {
       const formSlider = document.getElementById("form-slider");
       var body = document.querySelector("body");
-
+      formCloseButton.style.transform = "rotate(360deg)"
       if(formSlider.classList.contains(`${styles['is-active']}`)){
         formSlider.classList.remove(`${styles['is-active']}`)
       }
@@ -61,6 +61,9 @@ const ControlBar = () => {
   return (
     <div>
       <div className={styles["mobile-control-bar"]} id="mobile-control-bar">
+        <div className={styles["mobile-logo-container"]}>
+          {/* <Link></Link>  */}
+          Logo Goes Here</div>
         <div className={styles["control-bar"]}>
           <div className={styles["nav-button-wrapper"]}>
             <button
@@ -80,7 +83,6 @@ const ControlBar = () => {
           <div className={styles["contact-button"]} id="form-button">
             <span style={metal2.style}>Contact Us</span>
           </div>
-
           <Socials directory={"control-bar"} />
         </div>
       </div>

@@ -19,51 +19,6 @@ const Locations = () => {
       blurb: "",
       icon: "",
     },
-    {
-      name: "Aspen, Colorado, United States",
-      blurb: "",
-      icon: "",
-    },
-    {
-      name: "Aspen, Colorado, United States",
-      blurb: "",
-      icon: "",
-    },
-    {
-      name: "Aspen, Colorado, United States",
-      blurb: "",
-      icon: "",
-    },
-    {
-      name: "Aspen, Colorado, United States",
-      blurb: "",
-      icon: "",
-    },
-    {
-      name: "Aspen, Colorado, United States",
-      blurb: "",
-      icon: "",
-    },
-    {
-      name: "Aspen, Colorado, United States",
-      blurb: "",
-      icon: "",
-    },
-    {
-      name: "Aspen, Colorado, United States",
-      blurb: "",
-      icon: "",
-    },
-    {
-      name: "Aspen, Colorado, United States",
-      blurb: "",
-      icon: "",
-    },
-    {
-      name: "Aspen, Colorado, United States",
-      smallBlurb: "LAST ONE",
-      icon: "",
-    },
   ];
 
   return (

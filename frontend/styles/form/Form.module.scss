@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    min-height: 100%;
+    border-bottom: 2px solid $giant-orange;
 
     @include above($fullhd){
         padding: 0 100px;
@@ -28,7 +29,7 @@
     }
 
     @include below($tablet){
-        padding: 40px 20px;
+        padding: 40px 20px 100px;
     }
 
     .contact-header {

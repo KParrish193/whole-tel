@@ -7,15 +7,34 @@
     width: 100%;
     background-color: $floral-white;
 
-    // scroll transition
+    // needed for mobile bar scroll transition
     transition: top 0.5s cubic-bezier(0.82, 0.14, 0.23, 0.885);
 
     @include below($widescreen){
         height: $navheight;
         border-bottom: solid 3px $delft-blue;
+        display: flex;
+    }
+
+    .mobile-logo-container {
+        @include above($widescreen){
+            display: none;
+        }
+
+        @include below($widescreen){
+            min-width: $navheight;
+            min-height: $navheight;
+            max-width: $navheight;
+            max-height: $navheight;
+        }
+
+        @include between($desktop, $widescreen){
+            border-right: 3px solid $delft-blue;
+        }
     }
 }
 
+// controls contact button and nav button
 .control-bar {
     z-index: 9999;
     position: fixed;
@@ -30,6 +49,7 @@
         position: relative;
         z-index: 1;
         min-height: $navheight;
+        width: 100%;
     }
 
     .contact-button {
@@ -42,6 +62,7 @@
         align-items: center;
         justify-content: center;
         background-color: $floral-white;
+        transition: transform 0.5s cubic-bezier(0.82, 0.14, 0.23, 0.885);
 
         span {
             display: block;
@@ -49,21 +70,25 @@
             color: $giant-orange;
             font-size: 3.6rem;
             letter-spacing: 0.02rem;
-            // text-transform: uppercase;
             @include heading-h4;
         }
 
         @include below($widescreen){
-            // display: none;
             min-width: fit-content;
             max-width: fit-content;
             height: $navheight;
             border-bottom: 3px solid $delft-blue;
-            padding: 0 32px;
+            padding: 0 24px;
 
             span {
                 writing-mode: initial;
+                font-size: 1.7rem;
             }
+        }
+        
+        @include below($desktop){
+            min-width: calc(100% - $navheight);
+            max-width: calc(100% - $navheight);
         }
 
         &:hover {
@@ -78,6 +103,7 @@
     }
 }
 
+// hamburger button active and inacitve styles
 .nav-button-wrapper {
     width: $sidebarwidth;
     height: $sidebarwidth;
@@ -88,8 +114,10 @@
     align-items: center;
 
     @include below($widescreen){
-        width: $navheight;
-        height: $navheight;
+        min-width: $navheight;
+        min-height: $navheight;
+        max-width: $navheight;
+        max-height: $navheight;
     }
 
     .navbar-btn {
@@ -198,9 +226,9 @@
     }
 
     @include below($desktop){
-        // margin-top: $navheight;
         min-height: 100%;
         transform: translateY(calc(-100% - $navheight));
+        overflow-y: scroll;
     }
 
     &.is-active {
@@ -218,6 +246,7 @@
         height: 44px;
         position: absolute;
         background: transparent;
+        transition: transform 0.2s cubic-bezier(0.820, 0.085, 0.395, 0.895);
         
         @include above($widescreen){
             top: 45px;
@@ -286,7 +315,7 @@
         right: 0;
     }
 
-    @include below($desktop){
+    @include below($widescreen){
         height: calc(100vh - $navheight);
         margin-top: $navheight;
     }
