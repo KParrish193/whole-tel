@@ -1,8 +1,9 @@
-import { Figtree } from "next/font/google";
+import { Figtree, Montagu_Slab } from "next/font/google";
 import localFont from "next/font/local";
 
 
 const figtree = Figtree({ subsets: ["latin"] });
+const montagu_slab = Montagu_Slab({ subsets: ["latin"] });
 
 // const poppins300 = Poppins({ weight: "300" }, { subsets: ['latin'] });
 // const poppins400 = Poppins({ weight: "400" }, { subsets: ['latin'] });
@@ -14,4 +15,4 @@ const oreloRegular = localFont({ src: "./fonts/OreloCondensedRegular.woff2" });
 const metal = localFont({ src: "./fonts/Metal.woff" });
 const metal2 = localFont({ src: "./fonts/MetalReg-2.otf" });
 
-export { figtree, oreloLight, oreloMedium, oreloRegular, metal, metal2 };
+export { figtree, montagu_slab,oreloLight, oreloMedium, oreloRegular, metal, metal2 };

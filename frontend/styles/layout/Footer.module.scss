@@ -1,0 +1,14 @@
+@import "styles";
+
+.footer {
+    @include subheading-small;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+
+    @include below($desktop){
+        font-size: 0.6rem;
+    }
+}

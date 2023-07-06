@@ -1,0 +1,329 @@
+@import "styles";
+
+.mobile-control-bar {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: $floral-white;
+
+    // needed for mobile bar scroll transition
+    transition: top 0.5s cubic-bezier(0.82, 0.14, 0.23, 0.885);
+
+    @include below($widescreen){
+        height: $navheight;
+        border-bottom: solid 3px $delft-blue;
+        display: flex;
+    }
+
+    .mobile-logo-container {
+        @include above($widescreen){
+            display: none;
+        }
+
+        @include below($widescreen){
+            min-width: $navheight;
+            min-height: $navheight;
+            max-width: $navheight;
+            max-height: $navheight;
+        }
+
+        @include between($desktop, $widescreen){
+            border-right: 3px solid $delft-blue;
+        }
+    }
+}
+
+// controls contact button and nav button
+.control-bar {
+    z-index: 9999;
+    position: fixed;
+    right: 0;
+    top: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    @include below($widescreen){
+        flex-direction: row-reverse;
+        position: relative;
+        z-index: 1;
+        min-height: $navheight;
+        width: 100%;
+    }
+
+    .contact-button {
+        top: $sidebarwidth;
+        height: calc(100vh - ($sidebarwidth * 3));
+        border-left: 3px solid $delft-blue;
+        min-width: $sidebarwidth;
+        max-width: $sidebarwidth;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $floral-white;
+        transition: transform 0.5s cubic-bezier(0.82, 0.14, 0.23, 0.885);
+
+        span {
+            display: block;
+            writing-mode: vertical-rl;
+            color: $giant-orange;
+            font-size: 3.6rem;
+            letter-spacing: 0.02rem;
+            @include heading-h4;
+        }
+
+        @include below($widescreen){
+            min-width: fit-content;
+            max-width: fit-content;
+            height: $navheight;
+            border-bottom: 3px solid $delft-blue;
+            padding: 0 24px;
+
+            span {
+                writing-mode: initial;
+                font-size: 1.7rem;
+            }
+        }
+        
+        @include below($desktop){
+            min-width: calc(100% - $navheight);
+            max-width: calc(100% - $navheight);
+        }
+
+        &:hover {
+            background-color: $giant-orange;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
+            
+            span {
+                color: $floral-white;
+            }
+        }
+    }
+}
+
+// hamburger button active and inacitve styles
+.nav-button-wrapper {
+    width: $sidebarwidth;
+    height: $sidebarwidth;
+    border-left: 3px solid $delft-blue;
+    border-bottom: 3px solid $delft-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include below($widescreen){
+        min-width: $navheight;
+        min-height: $navheight;
+        max-width: $navheight;
+        max-height: $navheight;
+    }
+
+    .navbar-btn {
+        z-index: 999;
+        display: block;
+        position: relative;
+        background-color: $floral-white;
+        border: none;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        @include below($widescreen){
+            width: $navheight;
+            height: calc($navheight - 3px);
+            z-index: 1;
+        }
+
+        &:hover {
+            background-color: $giant-orange;
+            transition: all 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
+            
+            span {
+                background-color: $floral-white;
+            }
+        }
+
+        &.button-is-active {
+            background-color: $delft-blue;
+            transition: all 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
+            
+            span {
+                background-color: $floral-white;
+            }
+        }
+
+        span {
+            transition: all 0.2s ease;
+            position: absolute;
+            background-color: $delft-blue;
+            height: 3px;
+        }
+
+        span:nth-child(1) {
+            top: calc(50% - 10px);
+            right: 33%;
+            width: 24px;
+
+            @include below($widescreen){
+                right: 20.5px;
+            }
+        }
+
+        span:nth-child(2) {
+            top: calc(50% + 10px);
+            right: 33%;
+            width: 34px;
+
+            @include below($widescreen){
+                right: 20.5px;
+            }
+        }
+
+        span:nth-child(3) {
+            top: calc(50%);
+            right: 33%;
+            width: 34px;
+
+            @include below($widescreen){
+                right: 20.5px;
+            }
+        }
+
+        &.button-is-active {
+            span:nth-child(1) {
+                width: 34px;
+                transform: translate(0, 10px) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                width: 34px;
+                transform: translate(0, -10px) rotate(-45deg);
+                transform-origin: center;
+            }
+
+            span:nth-child(3) {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+// Form and NavMenu Sliding Animations
+.form-slider {
+    width: calc(100% - $sidebarwidth);
+    height: 100vh;
+    position: fixed;
+    background: $floral-white;
+    transform: translateX(calc(100% + $sidebarwidth));
+    transition: transform 0.7s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+
+    @include below($widescreen){
+        width: 100%;
+        height: calc(100vh - $navheight);
+        transform: translateY(calc(-100% - $navheight));
+    }
+
+    @include below($desktop){
+        min-height: 100%;
+        transform: translateY(calc(-100% - $navheight));
+        overflow-y: scroll;
+    }
+
+    &.is-active {
+        border-color: cyan;
+        transform: translateX(0);
+
+        @include below($widescreen){
+            transform: translateY(0);
+        }
+    }
+
+    .form-close-button {
+        border: none;
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        background: transparent;
+        transition: transform 0.15s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+        
+        @include above($widescreen){
+            top: 45px;
+            right: 45px;
+            margin: -6px -6px 0 0;
+        }
+
+        @include below($widescreen){
+            top: 20px;
+            right: 20px;
+            margin: -8px -8px 0 0;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        span {
+            background-color: $delft-blue;
+            height: 2px;
+            width: 34px;
+            position: absolute;
+            right: 4px;
+            top: 19px;
+        }
+
+        span:nth-child(1) {
+            background-color: $delft-blue;
+            transform: rotate(45deg);
+        }
+
+        span:nth-child(2) {
+            background-color: $delft-blue;
+            transform: rotate(-45deg);
+            transform-origin: center;
+        }
+    }
+}
+
+.nav-slider {
+    position: fixed;
+    top: 0;
+    background: $floral-white;
+    transition: transform 0.7s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+    display: flex;
+    z-index: 999;
+    
+    @include above($fullhd){
+        width: calc(45% - $sidebarwidth);
+    }
+
+    @include above($widescreen){
+        transform: translateX(250%);
+        border-bottom-left-radius: 8px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        right: $sidebarwidth;
+        width: calc(55% - $sidebarwidth);
+        min-height: 50vh;
+        align-items: center;
+    }
+
+    @include below($widescreen){
+        width: 100%;
+        transform: translateY(calc(-100% - $navheight));
+        right: 0;
+    }
+
+    @include below($widescreen){
+        height: calc(100vh - $navheight);
+        margin-top: $navheight;
+    }
+
+    &.is-active {
+        transform: translateX(0);
+
+        @include below($widescreen){
+            transform: translateY(0);
+        }
+    }
+}

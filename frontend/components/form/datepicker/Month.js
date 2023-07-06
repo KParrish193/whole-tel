@@ -12,32 +12,32 @@ function Month({ year, month, firstDayOfWeek }) {
   });
 
   return (
-    <div className={styles['datepicker-month-wrapper']}>
-        <div className={styles['month-heading']} style={figtree.style}>
-            <h4>{monthLabel}</h4>
-        </div>
-        <div className={styles['day-headings']}>
-            {weekdayLabels.map((dayLabel) => (
-            <div key={dayLabel} style={figtree.style}>
-                {dayLabel}
-            </div>
-            ))}
-        </div>
-        <div className={styles['datepicker-calendar-grid']}>
-            {days.map((day, index) => {
-                if (typeof day === "object") {
-                    return (
-                    <Day
-                        date={day.date}
-                        key={day.date.toString()}
-                        dayLabel={day.dayLabel}
-                    />
-                    );
-                }
+    <div className={styles["datepicker-month-wrapper"]}>
+      <div className={styles["month-heading"]} style={figtree.style}>
+        <h4>{monthLabel}</h4>
+      </div>
+      <div className={styles["day-headings"]}>
+        {weekdayLabels.map((dayLabel) => (
+          <div key={dayLabel} style={figtree.style}>
+            {dayLabel}
+          </div>
+        ))}
+      </div>
+      <div className={styles["datepicker-calendar-grid"]}>
+        {days.map((day, index) => {
+          if (typeof day === "object") {
+            return (
+              <Day
+                date={day.date}
+                key={day.date.toString()}
+                dayLabel={day.dayLabel}
+              />
+            );
+          }
 
-            return <div key={index} />;
-            })}
-        </div>
+          return <div key={index} />;
+        })}
+      </div>
     </div>
   );
 }
