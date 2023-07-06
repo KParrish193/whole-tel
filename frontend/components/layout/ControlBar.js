@@ -22,47 +22,45 @@ const ControlBar = () => {
       }
       prevScrollPos = currentScrollPos;
     };
-
-    // query selectors for nav and form drawers - Desktop
-    const formTrigger = document.getElementById("form-button");
-    const navTrigger = document.getElementById("nav-button");
-
-    formTrigger.addEventListener("click", () => {
-      const formSlider = document.getElementById("form-slider");
-      var body = document.querySelector("body");
-      // Toggle the "is-active" class on both the button and the drawer
-      formTrigger.classList.toggle(`${styles["button-is-active"]}`);
-      formSlider.classList.toggle(`${styles["is-active"]}`);
-      body.classList.toggle("is-clipped-overflow");
-    });
-
-    navTrigger.addEventListener("click", () => {
-      const navSlider = document.getElementById("nav-slider");
-      var body = document.querySelector("body");
-      // Toggle the "is-active" class on both the button and the drawer
-      navTrigger.classList.toggle(`${styles["button-is-active"]}`);
-      navSlider.classList.toggle(`${styles["is-active"]}`);
-      body.classList.toggle("is-clipped-overflow");
-    });
   }
 
-  const [clicked, setClicked] = useState(false);
-  function formClose() {
+  function formToggle(e) {
+    const formSlider = document.getElementById("form-slider");
+    const formTrigger = document.getElementById("form-button");
+    var body = document.querySelector("body");
+    // Toggle the "is-active" class on both the button and the drawer
+    formTrigger.classList.toggle(`${styles["button-is-active"]}`);
+    formSlider.classList.toggle(`${styles["is-active"]}`);
+    body.classList.toggle("is-clipped-overflow");
+  }
+
+  function navToggle(e) {
+    const navSlider = document.getElementById("nav-slider");
+    const navTrigger = document.getElementById("nav-button");
+    var body = document.querySelector("body");
+    // Toggle the "is-active" class on both the button and the drawer
+    navTrigger.classList.toggle(`${styles["button-is-active"]}`);
+    navSlider.classList.toggle(`${styles["is-active"]}`);
+    body.classList.toggle("is-clipped-overflow");
+  }
+
+
+  function formClose(e) {
     const formSliderGlobal = document.getElementById("form-slider");
     var bodyGlobal = document.querySelector("body");
     const formCloseButton = document.getElementById("form-close-button");
-
-    setClicked(true);
     if (formSliderGlobal.classList.contains(`${styles["is-active"]}`)) {
       formSliderGlobal.classList.remove(`${styles["is-active"]}`);
     }
     if (bodyGlobal.classList.contains("is-clipped-overflow")) {
       bodyGlobal.classList.remove("is-clipped-overflow");
     }
-    formCloseButton.style.transform = "rotate(360deg)";
-    setClicked(false);
+    if(formCloseButton.style.transform === "") {
+      formCloseButton.style.transform = "rotate(360deg)";
+    } else {
+      formCloseButton.style.transform = "";
+    }
   }
-  console.log("clicked state", clicked);
 
   return (
     <div>
@@ -79,6 +77,7 @@ const ControlBar = () => {
               aria-expanded="false"
               data-target="site-navigation"
               id="nav-button"
+              onClick={navToggle}
             >
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
@@ -86,7 +85,7 @@ const ControlBar = () => {
             </button>
           </div>
 
-          <div className={styles["contact-button"]} id="form-button">
+          <div className={styles["contact-button"]} id="form-button" onClick={formToggle}>
             <span style={metal2.style}>Contact Us</span>
           </div>
           <Socials directory={"control-bar"} />
