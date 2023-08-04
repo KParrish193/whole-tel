@@ -6,7 +6,6 @@
     // margin-top: -2.5rem;
 
     @include below($widescreen){
-        border: solid 3px purple;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
