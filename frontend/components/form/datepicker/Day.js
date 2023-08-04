@@ -11,12 +11,12 @@ import { figtree } from "../../../styles/fonts";
 function Day({ dayLabel, date }) {
   const formatDay = (date) => {
     if (date < 10) {
-        return date.toString().slice(1);
+      return date.toString().slice(1);
     }
     return date.toString();
-    };
+  };
 
-    const dateIsToday = isToday(date)
+  const dateIsToday = isToday(date);
 
   const dayRef = useRef(null);
   const {

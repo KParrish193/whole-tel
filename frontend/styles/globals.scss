@@ -21,10 +21,25 @@ a {
 .container {
     max-width: 1650px;
     margin: 0 auto;
-    border: solid 1px purple;
+    min-height: 100vh;
 }
 
 .body-wrapper {
-  min-height: calc(100vh - 67px);
-  margin-top: 67px;
+  max-height: 100vh;
+  overflow: scroll;
+  width: calc(100vw - $sidebarwidth);
+
+  @include below($widescreen){
+    margin-top: $navheight;
+    width: 100%;
+    overflow: auto;
+    max-height: 100%;
+  }
+}
+
+body.is-clipped-overflow {
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
 }

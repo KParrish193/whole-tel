@@ -1,7 +1,8 @@
-// TODO: add nodemailer
+// TODO: add nodemailer to send email and text notifications
+
 import styles from "../../styles/form/Form.module.scss";
 import { figtree, metal2 } from "../../styles/fonts";
-import Datepicker from "./datepicker/Datepicker"
+import Datepicker from "./datepicker/Datepicker";
 
 const Form = () => {
     return (
@@ -28,43 +29,47 @@ const Form = () => {
               <label style={figtree.style}>Dates</label>
               <Datepicker />
             </div> */}
-            <div className={styles["contact-info"]}>
-              <label style={metal2.style}>Contact Info</label>
-              <div className={styles["name-inputs"]}>
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  style={figtree.style}
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  style={figtree.style}
-                />
-              </div>
-              <input type="email" placeholder="E-mail" style={figtree.style} />
-              <input type="tel" placeholder="Phone" style={figtree.style} />
-            </div>
-          </div>
-          <div className={styles["form-right"]}>
-            <div className={styles["event-info"]}>
-              <label style={metal2.style}>Event Info</label>
-              <input placeholder="Event Date(s)"></input>
-              <select>
-                <option>Number of Guests</option>
-              </select>
-              <textarea
-                placeholder="Tell us about your event"
+          <div className={styles["contact-info"]}>
+            <label style={metal2.style}>Contact Info</label>
+            <div className={styles["name-inputs"]}>
+              <input
+                type="text"
+                placeholder="First Name"
+                style={figtree.style}
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
                 style={figtree.style}
               />
             </div>
-            <div className={styles["submit-wrapper"]}>
-              <input type="submit" value="Send it" style={metal2.style} />
-            </div>
+            <input type="email" placeholder="E-mail" style={figtree.style} />
+            <input type="tel" placeholder="Phone" style={figtree.style} />
+            <select>
+              <option>Best time to be contacted</option>
+            </select>
           </div>
-        </form>
-      </div>
-    );
+        </div>
+        <div className={styles["form-right"]}>
+          <div className={styles["event-info"]}>
+            <label style={metal2.style}>Event Info</label>
+            <input placeholder="Event Date(s)"></input>
+            <select>
+              <option>Number of Guests</option>
+            </select>
+            <textarea
+              placeholder="Tell us about your event"
+              style={figtree.style}
+            />
+          </div>
+
+          <div className={styles["submit-wrapper"]}>
+            <input type="submit" value="Send it" style={metal2.style} />
+          </div>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default Form;

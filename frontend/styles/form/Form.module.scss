@@ -1,11 +1,11 @@
 @import "styles";
 
 .form-drawer-container {
-    min-height: calc(100vh - 67px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    display: none;
+    min-height: 100%;
+    border-bottom: 2px solid $giant-orange;
 
     @include above($fullhd){
         padding: 0 100px;
@@ -21,6 +21,7 @@
 
     @include below($desktop){
         align-items: flex-start;
+        justify-content: flex-start;
     }
 
     @include between($tablet, $desktop){
@@ -28,7 +29,7 @@
     }
 
     @include below($tablet){
-        padding: 50px 20px;
+        padding: 40px 20px 100px;
     }
 
     .contact-header {
@@ -36,20 +37,31 @@
         font-size: 3.6rem;
         margin: 0 0 10px 0;
         @include heading-h2;
+    }
+
+    .contact-paragraph {
+        color: $delft-blue;
+        @include body;
+        margin-bottom: 30px;
+        width: 47%;
+        
+        @include between($desktop, $fullhd){
+            width: 75%;
+        }
+
+        @include between($desktop, $widescreen){
+            margin-bottom: 50px;
+        }
 
         @include below($desktop){
-            margin-top: 40px;
+            width: 100%;
+            margin: 0 0 60px 0;
         }
     }
 
     form {
         display: flex; 
         justify-content: space-between;
-        margin-right: 100px;
-
-        @include below($widescreen){
-            margin: 0;
-        }
 
         @include below($desktop){
             flex-direction: column;
@@ -80,9 +92,14 @@
             .contact-info,
             .event-info, 
             .location-wrapper {
+                @include below($desktop){
+                    margin: 0 0 40px 0;
+                }
+
                 label {
-                    color: $robin-egg;
+                    color: $giant-orange;
                     @include subheading-metal;
+                    width: fit-content;
                 }
 
                 .name-inputs {
@@ -98,7 +115,7 @@
                         }
                     }
                 }
-
+                
                 input:not([type=submit]),
                 select,
                 textarea {
@@ -108,7 +125,7 @@
                     border: solid 1px $delft-blue;
                     padding: 1rem;
                     margin-top: 10px;
-                    @include body;
+                    @include body-inputs;
                     border-radius: 4px;
 
                     &:focus {
@@ -132,6 +149,10 @@
                     }
                 }
 
+                input {
+                    padding: 17px 16px !important;
+                }
+
                 textarea {
                     min-height: 250px;
                 }
@@ -139,26 +160,8 @@
         }
 
         .form-left {
-            .contact-paragraph {
-                color: $delft-blue;
-                margin: 0 0 30px 0;
-                @include body;
-
-                @include between($desktop, $widescreen){
-                    padding-right: 20px;
-                }
-
-                @include below($desktop){
-                    margin: 0 0 40px 0;
-                }
-            }
-
             .location-wrapper {
                 margin: 0 0 30px 0;
-
-                @include below($desktop){
-                    margin: 0 0 40px 0;
-                }
 
                 .date-wrapper {
                     @include between($tablet, $desktop){
@@ -173,17 +176,24 @@
         }
 
         .form-right {
+            .event-info {
+                display: flex;
+                flex-direction: column;
+            }
+
             .submit-wrapper {
                 width: 100%;
                 display: flex;
                 justify-content: flex-end;
+                margin-top: 10px;
                 
-                input[type=submit] {
+                input[type=submit],
+                button {
                     width: fit-content;
                     background-color: $robin-egg;
                     color: $delft-blue;
-                    border-radius: 4px;
-                    padding: 0.8rem 2.4rem; 
+                    border-radius: 12px;
+                    padding: 1rem 2.4rem; 
                     border: none;
                     text-transform: capitalize;
                     @include subheading-metal;
