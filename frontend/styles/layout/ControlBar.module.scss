@@ -41,6 +41,7 @@
     right: 0;
     top: 0;
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
 
@@ -214,6 +215,7 @@
 .form-slider {
     width: calc(100% - $sidebarwidth);
     height: 100vh;
+    min-height: -webkit-fill-available;
     position: fixed;
     background: $floral-white;
     transform: translateX(calc(100% + $sidebarwidth));
@@ -222,11 +224,13 @@
     @include below($widescreen){
         width: 100%;
         height: calc(100vh - $navheight);
+        min-height: -webkit-fill-available;
         transform: translateY(calc(-100% - $navheight));
     }
 
     @include below($desktop){
         min-height: 100%;
+        min-height: -webkit-fill-available;
         transform: translateY(calc(-100% - $navheight));
         overflow-y: scroll;
     }
@@ -317,6 +321,7 @@
     @include below($widescreen){
         height: calc(100vh - $navheight);
         margin-top: $navheight;
+        min-height: -webkit-fill-available;
     }
 
     &.is-active {
