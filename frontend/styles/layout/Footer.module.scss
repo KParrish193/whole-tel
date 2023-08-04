@@ -1,6 +1,7 @@
 @import "styles";
 
 .footer {
+    border: solid 3px fuchsia;
     @include subheading-small;
     font-size: 0.7rem;
     display: flex;

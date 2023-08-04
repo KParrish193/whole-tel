@@ -31,8 +31,8 @@ export default function Home() {
     <div className={`${styles["home-about-page-wrapper"]}`}>
       <h1>About Us</h1>
       <HeroHeader />
-      <FiftyFifty leftRight={'left'}/>
-      <FiftyFifty leftRight={'right'}/>
+      <FiftyFifty imageLeft={true}/>
+      <FiftyFifty imageLeft={false}/>
       <EventsGrid />
       <FeatureGrid />
       <GallerySlider />
