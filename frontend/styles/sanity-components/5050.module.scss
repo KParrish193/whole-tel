@@ -1,1 +1,45 @@
 @import "styles";
+
+.fifty-fifty {
+    .fifty-fifty-grid {
+        display: grid;
+        grid-template-rows: 100vh;
+        grid-template-columns: repeat(auto-fit,minmax(50%,1fr)) minmax(50%,1fr);
+        border: solid 2px purple;
+        
+        .content,
+        .image-wrapper {
+
+        }
+
+        .content {
+            width: 100%;
+            max-height: none;
+            min-height: 70vh;
+            flex-direction: column;
+            padding: 120px 60px;
+            position: relative;
+            border: solid 1px orange;
+        }
+
+        .image-wrapper {
+            width: auto;
+            height: 50vh;
+            max-height: 100%;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            border: solid 1px lime;
+        }
+
+        .left {
+            .image-wrapper {
+
+            }
+        }
+
+        .right {
+
+        }
+    }
+}

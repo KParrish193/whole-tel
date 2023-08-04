@@ -1,3 +1,5 @@
+// Note: Page Layout styles controlled globally
+
 import ControlBar from "./ControlBar";
 import Footer from "./Footer";
 import Head from "next/head";
