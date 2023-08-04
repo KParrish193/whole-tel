@@ -12,7 +12,6 @@
 
     @include below($widescreen){
         height: $navheight;
-        border-bottom: solid 3px $delft-blue;
         display: flex;
     }
 
@@ -26,10 +25,8 @@
             min-height: $navheight;
             max-width: $navheight;
             max-height: $navheight;
-        }
-
-        @include between($desktop, $widescreen){
-            border-right: 3px solid $delft-blue;
+            border-top: solid 3px $delft-blue;
+            border-bottom: solid 3px $delft-blue;
         }
     }
 }
@@ -50,6 +47,7 @@
         position: relative;
         z-index: 1;
         min-height: $navheight;
+        max-height: $navheight;
         width: 100%;
     }
 
@@ -72,14 +70,16 @@
             font-size: 3.6rem;
             letter-spacing: 0.02rem;
             @include heading-h4;
+            max-height: $navheight;
         }
 
         @include below($widescreen){
             min-width: fit-content;
             max-width: fit-content;
             height: $navheight;
-            border-bottom: 3px solid $delft-blue;
             padding: 0 24px;
+            border-bottom: solid 3px $delft-blue;
+            border-top: solid 3px $delft-blue;
 
             span {
                 writing-mode: initial;
@@ -108,8 +108,6 @@
 .nav-button-wrapper {
     width: $sidebarwidth;
     height: $sidebarwidth;
-    border-left: 3px solid $delft-blue;
-    border-bottom: 3px solid $delft-blue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,6 +117,7 @@
         min-height: $navheight;
         max-width: $navheight;
         max-height: $navheight;
+        border-top: solid 3px $delft-blue;
     }
 
     .navbar-btn {
@@ -127,9 +126,11 @@
         position: relative;
         background-color: $floral-white;
         border: none;
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
         cursor: pointer;
+        border-left: 3px solid $delft-blue;
+        border-bottom: 3px solid $delft-blue;
 
         @include below($widescreen){
             width: $navheight;
