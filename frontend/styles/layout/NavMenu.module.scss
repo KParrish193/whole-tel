@@ -6,14 +6,16 @@
     // margin-top: -2.5rem;
 
     @include below($widescreen){
+        border: solid 3px purple;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 40px $navheight 50px;
+        min-height: -webkit-fill-available;
     }
 
     @include below($desktop){
-        padding: 20px 20px 40px;
+        padding: 40px 20px 60px;
     }
 
     .nav-list-wrapper {
