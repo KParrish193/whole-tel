@@ -77,6 +77,17 @@
     }
 }
 
+@mixin body-cards {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    letter-spacing: 0.03rem;
+    font-weight: 500;
+
+    @include below($widescreen){
+        font-size: 0.7rem;
+    }
+}
+
 @mixin body-inputs {
     font-size: 1.2rem;
     letter-spacing: 0.03rem;

@@ -1,0 +1,64 @@
+@import "styles";
+
+.hero {
+    height: 50vw;
+    position: relative;
+    margin: 0 0 100px 0;
+
+    .background-image {
+        height: 50vw;
+        width: 100%;
+
+    }
+
+    .hero-copy-wrapper{
+        position: absolute;
+        transform: translate(-50% -50%);
+        width: 37%;
+
+        &.left {
+            left: 2.5rem;
+        }
+
+        &.right{
+            right: 2.5rem;
+        }
+
+        &.horiz-center{
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.vert-center {
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        &.top {
+            top: 2.5rem;
+        }
+
+        &.bottom {
+            bottom: 2.5rem;
+        }
+
+        &.dark {
+            color: $delft-blue;
+        }
+
+        &.light {
+            color: $floral-white;
+        }
+
+        h1 {
+            @include heading-h2;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        p {
+            @include body;
+            width: 80%;
+        }
+    }
+}

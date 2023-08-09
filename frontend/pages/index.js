@@ -27,14 +27,22 @@ export default function Home() {
       },
     ];
 
+    const textVertPos = "top"
+    const textHorizPos = "right";
+    const textColor = "light"
   return (
     <div className={`${styles["home-about-page-wrapper"]}`}>
-      <h1>About Us</h1>
-      <HeroHeader />
-      <FiftyFifty imageLeft={true}/>
-      <FiftyFifty imageLeft={false}/>
-      <EventsGrid />
+      {/* dynamically render these based on sanity studio */}
+
+      <HeroHeader 
+        textColor={textColor}
+        textHorizPos={textHorizPos}
+        textVertPos={textVertPos}/>
+      {/* <FiftyFifty imageLeft={true}/>
+      <FiftyFifty imageLeft={false}/> */}
       <FeatureGrid />
+      <EventsGrid />
+
       <GallerySlider />
       <LocationsGrid locations={locationsList} />
       <ReviewCarousel />
