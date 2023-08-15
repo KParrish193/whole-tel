@@ -1,1 +1,86 @@
 @import "styles";
+
+.review-carousel {
+    .carousel-wrapper {
+        .arrows {
+            button {
+                width: 50px;
+                height: 50px;
+                border: solid 1px $robin-egg;
+                border-radius: 50%;
+                background-color: $floral-white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    position: absolute;
+                    // top: 50%;
+                    // left: 50%;
+                    // transform: translate(-50% -50%);
+                    width: 30px;
+                    height: 30px;
+                    fill: $delft-blue;
+                }
+
+                &:first-of-type {
+                    svg {
+                        transform: rotate(-180deg);
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $robin-egg-light;
+                }
+            }
+
+        }
+
+        .slide {
+            padding: 50px 150px;
+
+            .slide-copy {
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    left: -95px;
+                    top: -85px;
+                    width: 170px;
+                    height: 170px;
+                    fill: $giant-orange;
+                }
+
+                p {
+                    @include heading-h4;
+                    color: $robin-egg;
+                    margin: 0 0 20px 0;
+                }
+            }
+
+            .reviewer-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: fit-content;
+                // margin-left: -65px;
+
+                .reviewer-info {
+
+                    h5 {
+                        margin: 0;
+                        color: $delft-blue;
+                        @include subheading-soehne;
+                    }
+
+                    p {
+                        margin: 0;
+                        color: $delft-blue;
+                        @include body-cards;
+                    }
+                }
+            }
+        }
+    }
+}

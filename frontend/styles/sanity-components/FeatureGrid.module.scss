@@ -1,47 +1,82 @@
 @import "styles";
 
-.feature-grid {        
-    // background-color: $robin-egg-light;
-    
-    .card-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 15px;
+.feature-grid {
+//   background-color: $robin-egg-light;
 
-        @include below($desktop){
-            grid-template-columns: repeat(3, 1fr);
-        }
+  .section-copy {
+    margin-bottom: 40px;
+    padding: 0 $desktop-horizontal-spacing;
+    width: 75%;
 
-        @include below($tablet){
-            grid-template-columns: repeat(2, 1fr);
-        }
-        
-        .feature-card {
-            background-color: $floral-white;
-            border-radius: 4px;
-            padding: 1.5rem;
-            color: $delft-blue;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-
-            .icon-wrapper {
-                border: solid 2px $giant-orange;
-                height: 50px;
-                width: 50px;
-            }
-
-            .copy-wrapper {
-                h4 {
-                    margin: 20px 0 0 0;
-                }
-
-                p {
-                    margin: 8px 0 0 0;
-                    @include body-cards;
-                }
-            }
-        }
+    @include below($tablet) {
+      padding: 0 $mobile-horizontal-spacing;
+      width: 100%;
     }
+
+    h3 {
+        @include heading-h4;
+        margin: 0;
+        color: $delft-blue;
+    }
+
+    p {
+        @include body;
+        color: $delft-blue;
+    }
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 $desktop-horizontal-spacing;
+
+    @include below($desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include below($tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 $mobile-horizontal-spacing;
+    }
+
+    @include below($mobile) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0 $mobile-horizontal-spacing;
+    }
+
+    .feature-card {
+      background-color: $floral-white;
+      border-radius: 4px;
+      padding: 1.5rem;
+      color: $delft-blue;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .icon-wrapper {
+        height: 50px;
+        width: 50px;
+
+        svg {
+          height: 50px;
+          width: 50px;
+          fill: $giant-orange;
+        }
+      }
+
+      .copy-wrapper {
+        h4 {
+          margin: 20px 0 0 0;
+        }
+
+        p {
+          margin: 8px 0 0 0;
+          @include body-cards;
+        }
+      }
+    }
+  }
 }

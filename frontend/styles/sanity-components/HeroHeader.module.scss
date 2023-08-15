@@ -5,41 +5,113 @@
     position: relative;
     margin: 0 0 100px 0;
 
-    .background-image {
-        height: 50vw;
-        width: 100%;
+    @include below($desktop){
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 50px 0;
+    }
 
+    &.homepage {
+        .hero-copy-wrapper {
+            h1 {
+                white-space: pre;
+            }
+        }
+    }
+
+    .image-overlay-wrapper {
+        position: relative;
+
+        .background-image {
+            height: 50vw;
+            width: 100%;
+            z-index: 10;
+
+            @include below($desktop){
+                height: 80vw;
+            }
+        }
+
+        .image-overlay {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            // border: solid 2px limegreen;
+            top: 0;
+            left: 0;
+            z-index: 15;
+
+            &.dark {
+                background-color: (rgb(255, 255 , 255, 0.3));
+            }
+
+            &.light {
+                background-color: rgb(0, 0, 0, 0.2);
+            }
+        }
     }
 
     .hero-copy-wrapper{
         position: absolute;
         transform: translate(-50% -50%);
         width: 37%;
+        // border: solid 2px purple;
+
+        @include below($desktop){
+            width: 100%;
+            position: relative;
+            padding: 1rem;
+        }
 
         &.left {
             left: 2.5rem;
+
+            @include below($desktop){
+                left: 0;
+            }
         }
 
         &.right{
             right: 2.5rem;
+
+            @include below($desktop){
+                left: 0;
+            }
         }
 
         &.horiz-center{
             left: 50%;
             transform: translateX(-50%);
+
+            @include below($desktop){
+                left: 0;
+            }
         }
 
         &.vert-center {
             top: 50%;
-            transform: translateY(-50%)
+            transform: translateY(-50%);
+
+            @include below($desktop){
+                top: auto;
+            }
         }
 
         &.top {
             top: 2.5rem;
+
+            @include below($desktop){
+                top: auto;
+            }
         }
 
         &.bottom {
             bottom: 2.5rem;
+
+            @include below($desktop){
+                top: auto;
+            }
         }
 
         &.dark {
@@ -48,6 +120,11 @@
 
         &.light {
             color: $floral-white;
+            
+            @include below($desktop){
+                color: $delft-blue;
+            }
+
         }
 
         h1 {
@@ -59,6 +136,10 @@
         p {
             @include body;
             width: 80%;
+
+            @include below($desktop){
+                width: 85%;
+            }
         }
     }
 }

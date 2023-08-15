@@ -1,15 +1,16 @@
 @import "styles";
 
 .footer {
-    border: solid 3px fuchsia;
-    @include subheading-small;
-    font-size: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 10px;
+  border-top: $robin-egg-light 1px solid;
+  @include subheading-small;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
 
-    @include below($desktop){
-        font-size: 0.6rem;
-    }
+  @include below($desktop) {
+    font-size: 0.6rem;
+    padding: 0 $mobile-horizontal-spacing;
+  }
 }

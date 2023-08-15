@@ -1,37 +1,24 @@
-// cards with icons and blurbs about available features
-import styles from "../../styles/sanity-components/FeatureGrid.module.scss";
+// list with icons and blurbs about available features
+import styles from "../../styles/sanity-components/FeatureList.module.scss";
 import { figtree, soehne } from "../../styles/fonts";
-import Duck from "../../assets/duck.svg";
+import Duck from "../../assets/duck.svg"
 
-const FeatureGrid = ({headline, copy}) => {
+const FeatureList = ({ headline, copy, features }) => {
+    // features prop would effectively be array of objects of features 
   return (
-    <section className={`${styles["feature-grid"]} section-container`}>
+    <section className={`${styles["feature-list"]} section-container`}>
       {copy || headline ? (
         <div className={styles["section-copy"]}>
           <h3 style={soehne.style}>{headline}</h3>
           <p style={figtree.style}>{copy}</p>
         </div>
       ) : null}
-      <div className={styles["card-grid"]}>
+      <div className={styles["list-wrapper"]}>
         {/* map through features (GROQ query) */}
-        <div className={styles["feature-card"]}>
+        <div className={styles["feature-list-item"]}>
           <div className={styles["icon-wrapper"]}>
             {/* svg */}
-            <Duck />
             {/* icon path from GROQ/sanity */}
-          </div>
-          <div className={styles["copy-wrapper"]}>
-            <h4 style={soehne.style}>A heading</h4>
-            <p style={figtree.style}>
-              {/* copy from GROQ */}Lorem Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Rem dolorem maxime qui enim voluptatum sunt
-              suscipit autem.
-            </p>
-          </div>
-        </div>
-        <div className={styles["feature-card"]}>
-          <div className={styles["icon-wrapper"]}>
-            {/* icon from GROQ */}
             <Duck />
           </div>
           <div className={styles["copy-wrapper"]}>
@@ -43,9 +30,8 @@ const FeatureGrid = ({headline, copy}) => {
             </p>
           </div>
         </div>
-        <div className={styles["feature-card"]}>
-          <div className={styles["icon-wrapper"]}>
-            {/* icon from GROQ */}
+        <div className={styles["feature-list-item"]}>
+          <div className={styles["icon-wrapper"]}>{/* icon from GROQ */}
             <Duck />
           </div>
           <div className={styles["copy-wrapper"]}>
@@ -57,9 +43,8 @@ const FeatureGrid = ({headline, copy}) => {
             </p>
           </div>
         </div>
-        <div className={styles["feature-card"]}>
-          <div className={styles["icon-wrapper"]}>
-            {/* icon from GROQ */}
+        <div className={styles["feature-list-item"]}>
+          <div className={styles["icon-wrapper"]}>{/* icon from GROQ */}
             <Duck />
           </div>
           <div className={styles["copy-wrapper"]}>
@@ -71,9 +56,21 @@ const FeatureGrid = ({headline, copy}) => {
             </p>
           </div>
         </div>
-        <div className={styles["feature-card"]}>
-          <div className={styles["icon-wrapper"]}>
-            {/* icon from GROQ */}
+        <div className={styles["feature-list-item"]}>
+          <div className={styles["icon-wrapper"]}>{/* icon from GROQ */}
+            <Duck />
+          </div>
+          <div className={styles["copy-wrapper"]}>
+            <h4 style={soehne.style}>A heading</h4>
+            <p style={figtree.style}>
+              {/* copy from GROQ */}Lorem Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Rem dolorem maxime qui enim voluptatum sunt
+              suscipit autem.
+            </p>
+          </div>
+        </div>
+        <div className={styles["feature-list-item"]}>
+          <div className={styles["icon-wrapper"]}>{/* icon from GROQ */}
             <Duck />
           </div>
           <div className={styles["copy-wrapper"]}>
@@ -90,4 +87,4 @@ const FeatureGrid = ({headline, copy}) => {
   );
 };
 
-export default FeatureGrid;
+export default FeatureList;

@@ -1,14 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 import styles from "../../styles/layout/ControlBar.module.scss";
-import { figtree, metal2 } from "../../styles/fonts";
+import { figtree, soehne, geograph } from "../../styles/fonts";
 
-import Socials from './Socials';
+import Socials from "./Socials";
 import Form from "../form/Form";
 import NavMenu from "./NavMenu";
 
 // Contains JS for Control Bar, Form Drawer and Menu Drawer
 const ControlBar = () => {
-
   // load DOM elements first, then do stuff
   if (typeof window !== "undefined") {
     // JS for mobile control bar hide/show on scroll
@@ -44,7 +43,6 @@ const ControlBar = () => {
     body.classList.toggle("is-clipped-overflow");
   }
 
-
   function formClose(e) {
     const formSliderGlobal = document.getElementById("form-slider");
     var bodyGlobal = document.querySelector("body");
@@ -55,7 +53,7 @@ const ControlBar = () => {
     if (bodyGlobal.classList.contains("is-clipped-overflow")) {
       bodyGlobal.classList.remove("is-clipped-overflow");
     }
-    if(formCloseButton.style.transform === "") {
+    if (formCloseButton.style.transform === "") {
       formCloseButton.style.transform = "rotate(360deg)";
     } else {
       formCloseButton.style.transform = "";
@@ -67,7 +65,8 @@ const ControlBar = () => {
       <div className={styles["mobile-control-bar"]} id="mobile-control-bar">
         <div className={styles["mobile-logo-container"]}>
           {/* <Link></Link>  */}
-          Logo Goes Here</div>
+          Logo Goes Here
+        </div>
         <div className={styles["control-bar"]}>
           <div className={styles["nav-button-wrapper"]}>
             <button
@@ -85,15 +84,23 @@ const ControlBar = () => {
             </button>
           </div>
 
-          <div className={styles["contact-button"]} id="form-button" onClick={formToggle}>
-            <span style={metal2.style}>Contact Us</span>
+          <div
+            className={styles["contact-button"]}
+            id="form-button"
+            onClick={formToggle}
+          >
+            <span style={soehne.style}>Contact Us</span>
           </div>
           <Socials directory={"control-bar"} />
         </div>
       </div>
 
       <div className={styles["form-slider"]} id="form-slider">
-        <button className={styles["form-close-button"]} id="form-close-button" onClick={formClose}>
+        <button
+          className={styles["form-close-button"]}
+          id="form-close-button"
+          onClick={formClose}
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </button>
