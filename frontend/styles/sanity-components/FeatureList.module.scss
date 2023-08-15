@@ -1,18 +1,26 @@
 @import "styles";
 
 .feature-list {
+
+
     .section-copy {
         color: $delft-blue;
         margin-bottom: 40px;
         padding: 0 $desktop-horizontal-spacing;
+        width: 75%;
 
         @include below($desktop){
+            width: 100%;
             padding: 0 $mobile-horizontal-spacing;
         }
 
         h3 {
             @include heading-h4;
             margin: 0 0 20px 0;
+        }
+
+        p {
+            @include body;
         }
     }
 

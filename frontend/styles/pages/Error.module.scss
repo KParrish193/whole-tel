@@ -1,0 +1,116 @@
+@import "styles";
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-2028.33px);
+    }
+}
+
+.error-page-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $giant-orange;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        height: 100%;
+    
+        h1 {
+            &.outline {
+                -webkit-text-stroke: 1px;
+                -webkit-text-stroke-color: $robin-egg-light;
+                color: transparent;
+                font-size: 25rem;
+                text-align: center;
+                border: solid 2px fuchsia;
+                
+            }
+        }
+
+        svg {
+            fill: $robin-egg-light;
+        }
+    }
+
+    .content-wrapper {
+        position: relative;
+        z-index: 20;
+        border: solid 1px lime;
+
+        h1 {
+            color: $floral-white;
+            @include heading-h2;
+            margin: 0;
+        }
+
+        .error-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $delft-blue;
+            color: $floral-white;
+            width: fit-content;
+            border-radius: 4px;
+            padding: 0.5rem 1.5rem;
+
+            svg {
+                width: 30px;
+                height: 30px;
+                margin-left: 10px;
+                fill: $floral-white;
+            }
+        }
+    }
+
+    .banner {
+        border-top: solid 1px $delft-blue;
+        border-bottom: solid 1px $delft-blue;
+        width: 100%;
+        position: absolute;
+        bottom: 5vh;
+        overflow: hidden;
+        display: flex;
+        gap: 30px;
+
+        @include below($widescreen){
+            bottom: 13vh;
+        }
+
+        .scroll {
+            display: flex;
+            align-items: center;
+            animation: scroll 15s linear infinite;
+            gap: 30px;
+        }
+
+        p {
+            flex-shrink: 0;
+            color: $floral-white; 
+            opacity: 0.7;
+            text-transform: uppercase;
+            text-align: center;
+            width: fit-content;
+            white-space: pre;
+
+            span {
+                color: $floral-white;
+                margin: 0 30px;
+
+                &:last-of-type {
+                    margin: 0 0 0 30px;
+                }
+            }
+        }
+    }
+}

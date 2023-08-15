@@ -10,6 +10,7 @@ const LocationsGrid = ({ locations }) => {
               return (
                 <div className={styles["location-card-wrapper"]} key={index}>
                   <div className={styles["location-card-heading"]}>
+                    <h4 style={soehne.style}>{`0${index + 1}`}</h4>
                     <h4 style={soehne.style}>{location.name}</h4>
                   </div>
                   <div className={styles["location-card-content"]}>

@@ -39,22 +39,21 @@ export default function Home() {
     <div className={`${styles["home-about-page-wrapper"]}`}>
       {/* dynamically render these based on sanity studio */}
 
-      <HeroHeader
+      {/* <HeroHeader
         textColor={textColor}
         textHorizPos={textHorizPos}
         textVertPos={textVertPos}
         classNameProp={"homepage"}
-      />
+      /> */}
       {/* <FiftyFifty imageLeft={true}/>
       <FiftyFifty imageLeft={false}/> */}
-      <FeatureGrid copy={featureGridParagraph} headline={featureGridHeadline} />
-
-      <FeatureList copy={featureGridParagraph} headline={featureGridHeadline} />
-      {/* <EventsGrid />
-
-      <GallerySlider />
-      <LocationsGrid locations={locationsList} /> */}
-      <ReviewCarousel />
+      {/* <FeatureGrid copy={featureGridParagraph} headline={featureGridHeadline} /> */}
+      {/* <FeatureList copy={featureGridParagraph} headline={featureGridHeadline} /> */}
+      
+      <EventsGrid />
+      {/* <GallerySlider /> */}
+      {/* <LocationsGrid locations={locationsList} /> */}
+      {/* <ReviewCarousel /> */}
     </div>
   );
 }
