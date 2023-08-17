@@ -18,8 +18,8 @@ const FiftyFifty = ({ fiftyFiftyHeadline, fiftyFiftyCopy, fiftyFiftyLinkUrl, fif
       >
         <div className={styles["content"]}>
           <h4 style={soehne.style}>{fiftyFiftyHeadline}</h4>
-          {fiftyFiftyCopy.map((paragraph) => ( 
-            <p style={figtree.style}>{paragraph}</p>
+          {fiftyFiftyCopy.map((paragraph, index) => ( 
+            <p key={index + 1} style={figtree.style}>{paragraph}</p>
           ))}
           {fiftyFiftyLinkText && fiftyFiftyLinkUrl != "" ?
           <Link
