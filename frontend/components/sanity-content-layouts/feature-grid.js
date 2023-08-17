@@ -1,7 +1,7 @@
 // cards with icons and blurbs about available features
 import styles from "../../styles/sanity-components/FeatureGrid.module.scss";
 import { figtree, soehne } from "../../styles/fonts";
-import Duck from "../../assets/duck.svg";
+import Duck from "../../assets/svgs/duck.svg";
 
 const FeatureGrid = ({headline, copy}) => {
   return (
@@ -21,7 +21,7 @@ const FeatureGrid = ({headline, copy}) => {
             {/* icon path from GROQ/sanity */}
           </div>
           <div className={styles["copy-wrapper"]}>
-            <h4 style={soehne.style}>A heading</h4>
+            <h4 style={soehne.style}>Concierge at Your Service</h4>
             <p style={figtree.style}>
               {/* copy from GROQ */}Lorem Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Rem dolorem maxime qui enim voluptatum sunt
@@ -35,7 +35,7 @@ const FeatureGrid = ({headline, copy}) => {
             <Duck />
           </div>
           <div className={styles["copy-wrapper"]}>
-            <h4 style={soehne.style}>A heading</h4>
+            <h4 style={soehne.style}>Transportation</h4>
             <p style={figtree.style}>
               {/* copy from GROQ */}Lorem Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Rem dolorem maxime qui enim voluptatum sunt
@@ -49,7 +49,7 @@ const FeatureGrid = ({headline, copy}) => {
             <Duck />
           </div>
           <div className={styles["copy-wrapper"]}>
-            <h4 style={soehne.style}>A heading</h4>
+            <h4 style={soehne.style}>Excursions</h4>
             <p style={figtree.style}>
               {/* copy from GROQ */}Lorem Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Rem dolorem maxime qui enim voluptatum sunt
@@ -63,7 +63,7 @@ const FeatureGrid = ({headline, copy}) => {
             <Duck />
           </div>
           <div className={styles["copy-wrapper"]}>
-            <h4 style={soehne.style}>A heading</h4>
+            <h4 style={soehne.style}>Local Cuisine</h4>
             <p style={figtree.style}>
               {/* copy from GROQ */}Lorem Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Rem dolorem maxime qui enim voluptatum sunt
@@ -77,7 +77,7 @@ const FeatureGrid = ({headline, copy}) => {
             <Duck />
           </div>
           <div className={styles["copy-wrapper"]}>
-            <h4 style={soehne.style}>A heading</h4>
+            <h4 style={soehne.style}>Entertainment</h4>
             <p style={figtree.style}>
               {/* copy from GROQ */}Lorem Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Rem dolorem maxime qui enim voluptatum sunt

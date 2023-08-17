@@ -1,8 +1,8 @@
 import styles from "../styles/pages/Error.module.scss";
 import { figtree, soehne, geograph } from "../styles/fonts";
 
-import Arrow from "../assets/arrow.svg"
-import Duck from "../assets/duck.svg";
+import Arrow from "../assets/svgs/arrow.svg"
+import Duck from "../assets/svgs/duck.svg";
 import Link from "next/link";
 
 export default function Custom404() {

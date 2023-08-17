@@ -11,6 +11,9 @@ const HeroHeader = ({
   textHorizPos,
   textColor,
   classNameProp,
+  heroHeading,
+  heroSubheading,
+  heroCopy
 }) => {
   const alt = "pano picture of cabo san lucas";
   return (
@@ -48,13 +51,9 @@ const HeroHeader = ({
           ]
         }`}
       >
-        <h1 style={soehne.style}>Welcome to the Whole-tel</h1>
-        <p style={geograph.style}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga possimus
-          maiores, ipsum odit necessitatibus, ipsam alias praesentium ad quae
-          autem quos iure voluptatem blanditiis nulla, similique eius delectus
-          neque aperiam?
-        </p>
+        <h1 style={soehne.style}>{heroHeading}</h1>
+        <h4 style={soehne.style}>{heroSubheading}</h4>
+        <p style={figtree.style}>{heroCopy}</p>
       </div>
     </section>
   );

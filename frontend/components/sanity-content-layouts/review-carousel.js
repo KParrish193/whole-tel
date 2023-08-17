@@ -1,7 +1,7 @@
 import styles from "../../styles/sanity-components/ReviewCarousel.module.scss";
 import { figtree, soehne } from "../../styles/fonts";
-import Quote from "../../assets/quote.svg";
-import Arrow from "../../assets/arrow.svg";
+import Quote from "../../assets/svgs/quote.svg";
+import Arrow from "../../assets/svgs/arrow.svg";
 
 const ReviewCarousel = () => {
   return (

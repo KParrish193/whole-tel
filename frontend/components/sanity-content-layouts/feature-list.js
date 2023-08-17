@@ -1,7 +1,7 @@
 // list with icons and blurbs about available features
 import styles from "../../styles/sanity-components/FeatureList.module.scss";
 import { figtree, soehne } from "../../styles/fonts";
-import Duck from "../../assets/duck.svg"
+import Duck from "../../assets/svgs/duck.svg"
 
 const FeatureList = ({ headline, copy, features }) => {
     // features prop would effectively be array of objects of features 

@@ -28,32 +28,65 @@ export default function Home() {
     },
   ];
 
+  // hero content
   const textVertPos = "top";
-  const textHorizPos = "left";
+  const textHorizPos = "right";
   const textColor = "light";
+  const heroHeading = "Welcome to Whole-Tel";
+  const heroSubheading = "Have the whole place to yourselves";
+  const heroCopy = "Traveling with an extra-large group? Organizing a wedding, graduation, or special retreat? Combine the intimacy of your own back yard, with the accommodation of a large property when you rent the whole place and book through Whole-Tel rental services! Our Cabo San Lucas property has room for 30+ guests, with everything you need for an impressive group stay.";
 
-  const featureGridParagraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse temporibus voluptates earum quibusdam, unde est a veniam porro ea mollitia nesciunt. Provident placeat, sit earum similique iste explicabo! Corporis!"
-  const featureGridHeadline = "Headline"
+  const fiftyFiftyHeadline1 = "The Whole-Tel Revolution";
+  const fiftyFiftyCopy1 = ["Whole-Tel is an innovative new travel concept that allows you to hire an entire property of 5 to 30+ rooms on behalf of you and your guests.", "When traveling in a large group, sourcing the ideal accommodation can be difficult. Vacation rentals generally don’t have the capacity for larger gatherings, while others lack the private social areas better suited to familiar groups.", "Starting with one impressive property in Cabo San Lucas and with more coming soon, we offer a one-of-a-kind experience for you and your travel companions."];
+  const fiftyFiftyLinkUrl1 = ""; 
+  const fiftyFiftyLinkText1 = "";
+  const fiftyFifty1Image = true; 
+
+  const fiftyFiftyHeadline2 = "";
+  const fiftyFiftyCopy2 = [];
+  const fiftyFiftyLinkUrl2 = "";
+  const fiftyFiftyLinkText2 = "";
+  const fiftyFifty2Image = false; 
+
+
+  // feature grid content
+  const featureGridParagraph = "Blurb about customizing experience"
+  const featureGridHeadline = "Fully Customize Your Experience"
 
   return (
     <div className={`${styles["home-about-page-wrapper"]}`}>
       {/* dynamically render these based on sanity studio */}
 
-      {/* <HeroHeader
+      <HeroHeader
         textColor={textColor}
         textHorizPos={textHorizPos}
         textVertPos={textVertPos}
         classNameProp={"homepage"}
-      /> */}
-      {/* <FiftyFifty imageLeft={true}/>
-      <FiftyFifty imageLeft={false}/> */}
-      {/* <FeatureGrid copy={featureGridParagraph} headline={featureGridHeadline} /> */}
+        heroHeading={heroHeading}
+        heroSubheading={heroSubheading}
+        heroCopy={heroCopy}
+      />
+      <FiftyFifty
+        fiftyFiftyHeadline={fiftyFiftyHeadline1}
+        fiftyFiftyCopy={fiftyFiftyCopy1}
+        fiftyFiftyLinkUrl={fiftyFiftyLinkUrl1}
+        fiftyFiftyLinkText={fiftyFiftyLinkText1}
+        imageLeft={fiftyFifty1Image}
+      />
+      <FiftyFifty
+        fiftyFiftyHeadline={fiftyFiftyHeadline2}
+        fiftyFiftyCopy={fiftyFiftyCopy2}
+        fiftyFiftyLinkUrl={fiftyFiftyLinkUrl2}
+        fiftyFiftyLinkText={fiftyFiftyLinkText2}
+        imageLeft={fiftyFifty2Image}
+      />
+      <FeatureGrid copy={featureGridParagraph} headline={featureGridHeadline} />
       {/* <FeatureList copy={featureGridParagraph} headline={featureGridHeadline} /> */}
-      
-      <EventsGrid />
+
+      {/* <EventsGrid /> */}
       {/* <GallerySlider /> */}
       {/* <LocationsGrid locations={locationsList} /> */}
-      {/* <ReviewCarousel /> */}
+      <ReviewCarousel />
     </div>
   );
 }
