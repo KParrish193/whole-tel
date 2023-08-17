@@ -1,5 +1,5 @@
 import styles from "../../styles/pages/PastEvents.module.scss";
-import { figtree, metal2 } from "../../styles/fonts";
+import { figtree, soehne } from "../../styles/fonts";
 import EventsGrid from "../../components/sanity-content-layouts/events-grid";
 
 // case studies parent wrapper

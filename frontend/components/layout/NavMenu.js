@@ -2,7 +2,7 @@ import styles from "../../styles/layout/NavMenu.module.scss";
 import Socials from "./Socials";
 
 import Link from "next/link";
-import { metal2, figtree } from "../../styles/fonts";
+import { soehne, figtree } from "../../styles/fonts";
 
 // TODO: GROQ TO GET PAGES?
 const navlinks = [
@@ -45,7 +45,7 @@ const NavMenu = () => {
             <li key={index} className={styles["nav-link-wrapper"]}>
               <Link
                 href={link.href}
-                style={metal2.style}
+                style={soehne.style}
                 className={styles["nav-link"]}
               >
                 {link.text}

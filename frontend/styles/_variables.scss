@@ -3,6 +3,7 @@ $floral-white: #FBF7EF;
 $parchment: #F7EFDE;
 $delft-blue: #213559;
 $robin-egg: #49CBD4;
+$robin-egg-light: #BDECEF;
 $earth-yellow: #E2A850;
 $chili-red: #E93B20;
 $giant-orange: #FF6333;
@@ -13,6 +14,12 @@ $tablet: 577px;
 $desktop: 869px;
 $widescreen: 1075px;
 $fullhd: 1345px;
+
+// Spacing
+$mobile-horizontal-spacing: 20px;
+$mobile-vertical-spacing: 40px;
+$desktop-horizontal-spacing: 50px;
+$desktop-vertical-spacing: 50px;
 
 // Nav and sidebar
 $navheight: 75px;

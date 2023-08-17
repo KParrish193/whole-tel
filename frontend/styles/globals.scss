@@ -19,22 +19,36 @@ a {
 
 /* base body styles */
 .container {
-    max-width: 1650px;
+    max-width: 1800px;
     margin: 0 auto;
     min-height: 100vh;
+    height: 100%;
 }
 
 .body-wrapper {
-  max-height: 100vh;
   overflow: scroll;
   width: calc(100vw - $sidebarwidth);
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
 
   @include below($widescreen){
     margin-top: $navheight;
     width: 100%;
     overflow: auto;
     max-height: 100%;
+    min-height: 100vh;
   }
+
+  .scroll-content {
+    height: auto;
+    min-height: 100% !important;
+  }
+}
+
+main {
+  min-height: 100vh;
+  height: 100%;
 }
 
 body.is-clipped-overflow {
@@ -42,4 +56,12 @@ body.is-clipped-overflow {
     width: 100vw;
     height: 100vh;
     position: fixed;
+}
+
+.section-container {
+  padding: 80px 0;
+
+  @include below($desktop){
+    padding: 50px 0;
+  }
 }

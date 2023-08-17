@@ -1,5 +1,5 @@
 import styles from "../../styles/pages/UpcomingEvents.module.scss";
-import { figtree, metal2 } from "../../styles/fonts";
+import { figtree, soehne } from "../../styles/fonts";
 import EventsGrid from "../../components/sanity-content-layouts/events-grid";
 
 const UpcomingEvents = () => {

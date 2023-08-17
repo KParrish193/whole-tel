@@ -1,0 +1,146 @@
+@import "styles";
+
+.hero {
+
+    position: relative;
+    // margin: 0 0 100px 0;
+
+    @include below($desktop){
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        // margin: 0 0 50px 0;
+        height: 80vw;
+    }
+
+    .image-overlay-wrapper {
+        position: relative;
+        height: 55vw;
+
+        .background-image {
+            height: 55vw;
+            width: 100%;
+            z-index: 10;
+
+            @include below($desktop){
+                height: 80vw;
+            }
+        }
+
+        .image-overlay {
+            height: 55vw;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 15;
+
+            &.dark {
+                background-color: (rgb(255, 255 , 255, 0.3));
+            }
+
+            &.light {
+                background-color: rgb(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    .hero-copy-wrapper{
+        position: absolute;
+        transform: translate(-50% -50%);
+        width: 36%;
+        z-index: 50;
+        // border: solid 2px purple;
+
+        @include below($desktop){
+            width: 100%;
+            position: relative;
+            padding: 1rem;
+        }
+
+        &.left {
+            left: 2.5rem;
+
+            @include below($desktop){
+                left: 0;
+            }
+        }
+
+        &.right{
+            right: 2.5rem;
+
+            @include below($desktop){
+                left: 0;
+            }
+        }
+
+        &.horiz-center{
+            left: 50%;
+            transform: translateX(-50%);
+
+            @include below($desktop){
+                left: 0;
+            }
+        }
+
+        &.vert-center {
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include below($desktop){
+                top: auto;
+            }
+        }
+
+        &.top {
+            top: 2.5rem;
+
+            @include below($desktop){
+                top: auto;
+            }
+        }
+
+        &.bottom {
+            bottom: 2.5rem;
+
+            @include below($desktop){
+                top: auto;
+            }
+        }
+
+        &.dark {
+            color: $delft-blue;
+        }
+
+        &.light {
+            color: $floral-white;
+            
+            @include below($desktop){
+                color: $delft-blue;
+            }
+
+        }
+
+        h1 {
+            @include heading-h2;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        h4 {
+            @include heading-h4;
+            font-size: 1.75rem;
+            margin: 40px 0 20px 0;
+            color: $giant-orange;
+        }
+
+        p {
+            @include body-large;
+            width: 85%;
+        }
+
+        a {
+            @include button-cta;
+        }
+    }
+}

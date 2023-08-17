@@ -1,5 +1,5 @@
 import styles from "../../styles/pages/Availability.module.scss";
-import { figtree, metal2 } from "../../styles/fonts";
+import { figtree, soehne } from "../../styles/fonts";
 
 import dynamic from "next/dynamic";
 
@@ -19,7 +19,7 @@ const DynamicCalendarGrid = dynamic(
 
 export default function Availability() {
   return (
-    <div className={styles['availability-container']}>
+    <div className={styles["availability-container"]}>
       <h2>Availability</h2>
       <DynamicCalendarGrid
       // pass in location and availability props

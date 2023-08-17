@@ -1,1 +1,77 @@
 @import "styles";
+
+.fifty-fifty {
+    .fifty-fifty-grid {
+        display: grid;
+        grid-template-rows: 100vh;
+        grid-template-columns: repeat(auto-fit,minmax(50%,1fr)) minmax(50%,1fr);
+
+        @include below($widescreen){
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+
+        .content {
+            width: 100%;
+            max-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 60px;
+            position: relative;
+
+            @include below($widescreen){
+                min-height: auto;
+            }
+
+            h4 {
+                @include heading-h4;
+                color: $delft-blue;
+                margin-bottom: 40px;
+            }
+
+            p {
+                @include body;
+                color: $delft-blue;
+                margin-bottom: 20px;
+            }
+
+            a {
+                @include button-cta;
+            }
+        }
+
+        .image-wrapper {
+            height: 75vh;
+            max-height: 100%;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            background-color: $robin-egg-light;
+
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &.left {
+            .image-wrapper {
+                grid-column: 1;
+                grid-row: 1;
+                background-color: $robin-egg-light;
+            }
+
+            .content {
+                grid-column: 2;
+                grid-row: 1;
+            }
+        }
+
+        .right {
+
+        }
+    }
+}

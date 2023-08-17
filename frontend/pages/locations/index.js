@@ -1,5 +1,5 @@
 import styles from "../../styles/pages/Locations.module.scss";
-import { figtree, metal2 } from "../../styles/fonts";
+import { figtree, soehne } from "../../styles/fonts";
 import LocationsGrid from "../../components/sanity-content-layouts/locations-grid";
 
 // groq query for location name, blurb & icon

@@ -1,214 +1,214 @@
 @import "styles";
 
 .form-drawer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+
+  @include above($fullhd) {
+    padding: 0 100px;
+  }
+
+  @include between($widescreen, $fullhd) {
+    padding: 0 45px;
+  }
+
+  @include between($desktop, $widescreen) {
+    padding: 0 $mobile-horizontal-spacing;
+  }
+
+  @include below($desktop) {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  @include between($tablet, $desktop) {
+    padding: 50px;
+  }
+
+  @include below($tablet) {
+    padding: 40px $mobile-horizontal-spacing 100px;
+  }
+
+  .contact-header {
+    color: $robin-egg;
+    font-size: 3.6rem;
+    margin: 0 0 10px 0;
+    @include heading-h2;
+  }
+
+  .contact-paragraph {
+    color: $delft-blue;
+    @include body;
+    margin-bottom: 30px;
+
+    @include above($desktop){
+      padding-right: 50px;
+    }
+
+    @include between($desktop, $widescreen) {
+      margin-bottom: 50px;
+    }
+
+    @include below($desktop) {
+      margin: 0 0 60px 0;
+    }
+  }
+
+  form {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100%;
-    border-bottom: 2px solid $giant-orange;
+    justify-content: space-between;
 
-    @include above($fullhd){
-        padding: 0 100px;
+    @include below($desktop) {
+      flex-direction: column;
+      margin-right: 0;
     }
 
-    @include between($widescreen, $fullhd){
-        padding: 0 45px;
-    }
+    .form-left,
+    .form-right {
+      display: flex;
+      flex-direction: column;
 
-    @include between($desktop, $widescreen){
-        padding: 0 20px;
-    }
+      @include above($fullhd) {
+        width: 48%;
+      }
 
-    @include below($desktop){
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
+      @include between($widescreen, $fullhd) {
+        width: 48%;
+      }
 
-    @include between($tablet, $desktop){
-        padding: 50px;
-    }
+      @include between($desktop, $widescreen) {
+        width: 49%;
+      }
 
-    @include below($tablet){
-        padding: 40px 20px 100px;
-    }
+      @include below($desktop) {
+        width: 100%;
+      }
 
-    .contact-header {
-        color: $robin-egg;
-        font-size: 3.6rem;
-        margin: 0 0 10px 0;
-        @include heading-h2;
-    }
-
-    .contact-paragraph {
-        color: $delft-blue;
-        @include body;
-        margin-bottom: 30px;
-        width: 47%;
-        
-        @include between($desktop, $fullhd){
-            width: 75%;
+      .contact-info,
+      .event-info,
+      .location-wrapper {
+        @include below($desktop) {
+          margin: 0 0 40px 0;
         }
 
-        @include between($desktop, $widescreen){
-            margin-bottom: 50px;
+        label {
+          color: $giant-orange;
+          @include subheading-soehne;
+          width: fit-content;
         }
 
-        @include below($desktop){
-            width: 100%;
-            margin: 0 0 60px 0;
+        .name-inputs {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          input {
+            width: 49%;
+
+            &:first-of-type {
+              margin-right: 10px;
+            }
+          }
         }
+
+        input:not([type="submit"]),
+        select,
+        textarea {
+          width: 100%;
+          background: transparent;
+          color: $delft-blue;
+          border: solid 2px $delft-blue;
+          padding: 1rem;
+          margin-top: 10px;
+          @include body-inputs;
+          border-radius: 4px;
+
+          &:focus {
+            outline: none !important;
+            border-color: $giant-orange;
+            box-shadow: 0 0 2px $giant-orange;
+            border-radius: 3px;
+          }
+
+          &::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $delft-blue;
+            opacity: 1; /* Firefox */
+          }
+
+          &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: $delft-blue;
+          }
+
+          &::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: $delft-blue;
+          }
+        }
+
+        input {
+          padding: 17px 16px !important;
+        }
+
+        textarea {
+          min-height: 250px;
+        }
+      }
     }
 
-    form {
-        display: flex; 
-        justify-content: space-between;
+    .form-left {
+      .location-wrapper {
+        margin: 0 0 30px 0;
 
-        @include below($desktop){
-            flex-direction: column;
-            margin-right: 0;
+        .date-wrapper {
+          @include between($tablet, $desktop) {
+            margin-bottom: 40px;
+          }
+
+          @include below($tablet) {
+            margin-bottom: 20px;
+          }
         }
-
-        .form-left,
-        .form-right {
-            display: flex;
-            flex-direction: column;
-
-            @include above($fullhd){
-                width: 48%;
-            }
-
-            @include between($widescreen, $fullhd){            
-                width: 48%;
-            }
-
-            @include between($desktop, $widescreen){            
-                width: 49%;
-            }
-        
-            @include below($desktop){
-                width: 100%;
-            }
-
-            .contact-info,
-            .event-info, 
-            .location-wrapper {
-                @include below($desktop){
-                    margin: 0 0 40px 0;
-                }
-
-                label {
-                    color: $giant-orange;
-                    @include subheading-metal;
-                    width: fit-content;
-                }
-
-                .name-inputs {
-                    display: flex;
-                    justify-content: space-between;
-                    width: 100%;
-
-                    input {
-                        width: 49%;
-
-                        &:first-of-type {
-                            margin-right: 10px;
-                        }
-                    }
-                }
-                
-                input:not([type=submit]),
-                select,
-                textarea {
-                    width: 100%;
-                    background:transparent;
-                    color: $delft-blue;
-                    border: solid 1px $delft-blue;
-                    padding: 1rem;
-                    margin-top: 10px;
-                    @include body-inputs;
-                    border-radius: 4px;
-
-                    &:focus {
-                        outline: none !important;
-                        border-color: $giant-orange;
-                        box-shadow: 0 0 2px $giant-orange;
-                        border-radius: 3px;
-                    }
-                    
-                    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-                        color: $delft-blue;
-                        opacity: 1; /* Firefox */
-                    }
-
-                    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-                        color: $delft-blue;
-                    }
-
-                    &::-ms-input-placeholder { /* Microsoft Edge */
-                        color: $delft-blue;
-                    }
-                }
-
-                input {
-                    padding: 17px 16px !important;
-                }
-
-                textarea {
-                    min-height: 250px;
-                }
-            }
-        }
-
-        .form-left {
-            .location-wrapper {
-                margin: 0 0 30px 0;
-
-                .date-wrapper {
-                    @include between($tablet, $desktop){
-                        margin-bottom: 40px;
-                    }
-
-                    @include below($tablet){
-                        margin-bottom: 20px;
-                    }
-                }
-            }
-        }
-
-        .form-right {
-            .event-info {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .submit-wrapper {
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                margin-top: 10px;
-                
-                input[type=submit],
-                button {
-                    width: fit-content;
-                    background-color: $robin-egg;
-                    color: $delft-blue;
-                    border-radius: 12px;
-                    padding: 1rem 2.4rem; 
-                    border: none;
-                    text-transform: capitalize;
-                    @include subheading-metal;
-                    border-right: solid 1px $delft-blue;
-                    border-bottom: solid 1px $delft-blue;
-
-                    &:hover {
-                        color: $floral-white;
-                        background-color: $giant-orange;
-                        cursor: pointer;
-                        // transform: scale(1.05);
-                        transition: all 200ms cubic-bezier(0.880, 0.220, 0.200, 1.040);
-                    }
-                }
-            }
-        }
+      }
     }
+
+    .form-right {
+      .event-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .submit-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+
+        input[type="submit"],
+        button {
+          width: fit-content;
+          background-color: $robin-egg;
+          color: $delft-blue;
+          border-radius: 12px;
+          padding: 1rem 2.4rem;
+          border: none;
+          text-transform: capitalize;
+          @include subheading-soehne;
+          border-right: solid 1px $delft-blue;
+          border-bottom: solid 1px $delft-blue;
+
+          &:hover {
+            color: $floral-white;
+            background-color: $giant-orange;
+            cursor: pointer;
+            // transform: scale(1.05);
+            transition: all 200ms cubic-bezier(0.88, 0.22, 0.2, 1.04);
+          }
+        }
+      }
+    }
+  }
 }
