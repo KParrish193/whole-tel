@@ -138,5 +138,9 @@
             @include body-large;
             width: 85%;
         }
+
+        a {
+            @include button-cta;
+        }
     }
 }

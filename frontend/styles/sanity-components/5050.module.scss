@@ -35,6 +35,10 @@
                 color: $delft-blue;
                 margin-bottom: 20px;
             }
+
+            a {
+                @include button-cta;
+            }
         }
 
         .image-wrapper {

@@ -44,8 +44,8 @@ export default function Home() {
 
   const fiftyFiftyHeadline2 = "";
   const fiftyFiftyCopy2 = [];
-  const fiftyFiftyLinkUrl2 = "";
-  const fiftyFiftyLinkText2 = "";
+  const fiftyFiftyLinkUrl2 = "/";
+  const fiftyFiftyLinkText2 = "See our Custom Options";
   const fiftyFifty2Image = false; 
 
 

@@ -21,6 +21,7 @@ const FiftyFifty = ({ fiftyFiftyHeadline, fiftyFiftyCopy, fiftyFiftyLinkUrl, fif
           {fiftyFiftyCopy.map((paragraph) => ( 
             <p style={figtree.style}>{paragraph}</p>
           ))}
+          {fiftyFiftyLinkText && fiftyFiftyLinkUrl != "" ?
           <Link
             href={fiftyFiftyLinkUrl}
             style={soehne.style}
@@ -28,6 +29,8 @@ const FiftyFifty = ({ fiftyFiftyHeadline, fiftyFiftyCopy, fiftyFiftyLinkUrl, fif
           >
             {fiftyFiftyLinkText}
           </Link>
+          : null
+        }
         </div>
         <div className={styles["image-wrapper"]}>
           <Image className={styles["image"]} src={cabo} alt={alt} />
